@@ -1,0 +1,4745 @@
+<?xml version="1.0"?> 
+     <!DOCTYPE ipe SYSTEM "ipe.dtd"> 
+     <ipe version="70218" creator="Ipe 7.2.24"> 
+     <info created="D:20240517161412" modified="D:20240517162731"/> 
+     <ipestyle name="codac"> 
+     <symbol name="arrow/arc(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/farc(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/ptarc(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -0.8 0 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/fptarc(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -0.8 0 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="mark/circle(sx)" transformations="translations"> 
+     <path fill="sym-stroke"> 
+     0.6 0 0 0.6 0 0 e 
+     0.4 0 0 0.4 0 0 e 
+     </path> 
+     </symbol> 
+     <symbol name="mark/disk(sx)" transformations="translations"> 
+     <path fill="sym-stroke"> 
+     0.6 0 0 0.6 0 0 e 
+     </path> 
+     </symbol> 
+     <symbol name="mark/fdisk(sfx)" transformations="translations"> 
+     <group> 
+     <path fill="sym-fill"> 
+     0.5 0 0 0.5 0 0 e 
+     </path> 
+     <path fill="sym-stroke" fillrule="eofill"> 
+     0.6 0 0 0.6 0 0 e 
+     0.4 0 0 0.4 0 0 e 
+     </path> 
+     </group> 
+     </symbol> 
+     <symbol name="mark/box(sx)" transformations="translations"> 
+     <path fill="sym-stroke" fillrule="eofill"> 
+     -0.6 -0.6 m 
+     0.6 -0.6 l 
+     0.6 0.6 l 
+     -0.6 0.6 l 
+     h 
+     -0.4 -0.4 m 
+     0.4 -0.4 l 
+     0.4 0.4 l 
+     -0.4 0.4 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="mark/square(sx)" transformations="translations"> 
+     <path fill="sym-stroke"> 
+     -0.6 -0.6 m 
+     0.6 -0.6 l 
+     0.6 0.6 l 
+     -0.6 0.6 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="mark/fsquare(sfx)" transformations="translations"> 
+     <group> 
+     <path fill="sym-fill"> 
+     -0.5 -0.5 m 
+     0.5 -0.5 l 
+     0.5 0.5 l 
+     -0.5 0.5 l 
+     h 
+     </path> 
+     <path fill="sym-stroke" fillrule="eofill"> 
+     -0.6 -0.6 m 
+     0.6 -0.6 l 
+     0.6 0.6 l 
+     -0.6 0.6 l 
+     h 
+     -0.4 -0.4 m 
+     0.4 -0.4 l 
+     0.4 0.4 l 
+     -0.4 0.4 l 
+     h 
+     </path> 
+     </group> 
+     </symbol> 
+     <symbol name="mark/cross(sx)" transformations="translations"> 
+     <group> 
+     <path fill="sym-stroke"> 
+     -0.43 -0.57 m 
+     0.57 0.43 l 
+     0.43 0.57 l 
+     -0.57 -0.43 l 
+     h 
+     </path> 
+     <path fill="sym-stroke"> 
+     -0.43 0.57 m 
+     0.57 -0.43 l 
+     0.43 -0.57 l 
+     -0.57 0.43 l 
+     h 
+     </path> 
+     </group> 
+     </symbol> 
+     <symbol name="arrow/fnormal(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/pointed(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -0.8 0 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/fpointed(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -0.8 0 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/linear(spx)"> 
+     <path stroke="sym-stroke" pen="sym-pen"> 
+     -1 0.333 m 
+     0 0 l 
+     -1 -0.333 l 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/fdouble(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     -1 0 m 
+     -2 0.333 l 
+     -2 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/double(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     -1 0 m 
+     -2 0.333 l 
+     -2 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/mid-normal(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     0.5 0 m 
+     -0.5 0.333 l 
+     -0.5 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/mid-fnormal(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0.5 0 m 
+     -0.5 0.333 l 
+     -0.5 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/mid-pointed(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     0.5 0 m 
+     -0.5 0.333 l 
+     -0.3 0 l 
+     -0.5 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/mid-fpointed(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     0.5 0 m 
+     -0.5 0.333 l 
+     -0.3 0 l 
+     -0.5 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/mid-double(spx)"> 
+     <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen"> 
+     1 0 m 
+     0 0.333 l 
+     0 -0.333 l 
+     h 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <symbol name="arrow/mid-fdouble(spx)"> 
+     <path stroke="sym-stroke" fill="white" pen="sym-pen"> 
+     1 0 m 
+     0 0.333 l 
+     0 -0.333 l 
+     h 
+     0 0 m 
+     -1 0.333 l 
+     -1 -0.333 l 
+     h 
+     </path> 
+     </symbol> 
+     <anglesize name="22.5 deg" value="22.5"/> 
+     <anglesize name="30 deg" value="30"/> 
+     <anglesize name="45 deg" value="45"/> 
+     <anglesize name="60 deg" value="60"/> 
+     <anglesize name="90 deg" value="90"/> 
+     <arrowsize name="large" value="10"/> 
+     <arrowsize name="small" value="5"/> 
+     <arrowsize name="tiny" value="3"/> 
+<color name="codac_color_000000ff" value="0 0 0" /> 
+<color name="codac_color_227093ff" value="0.133334 0.439216 0.576471" /> 
+<color name="codac_color_2d98daff" value="0.176471 0.596079 0.854902" /> 
+<color name="codac_color_4bcffaff" value="0.294118 0.811765 0.980393" /> 
+<color name="codac_color_529797ff" value="0.321569 0.592157 0.592157" /> 
+<color name="codac_color_5e9e00ff" value="0.368628 0.619608 0" /> 
+<color name="codac_color_634822ff" value="0.388236 0.282353 0.133334" /> 
+<color name="codac_color_6c0077ff" value="0.42353 0 0.466667" /> 
+<color name="codac_color_6dc8c8ff" value="0.427451 0.784314 0.784314" /> 
+<color name="codac_color_707070ff" value="0.439216 0.439216 0.439216" /> 
+<color name="codac_color_81ececff" value="0.505883 0.925491 0.925491" /> 
+<color name="codac_color_90f200ff" value="0.564706 0.94902 0" /> 
+<color name="codac_color_976d34ff" value="0.592157 0.427451 0.203922" /> 
+<color name="codac_color_9a00aaff" value="0.603922 0 0.666667" /> 
+<color name="codac_color_b33939ff" value="0.701961 0.22353 0.22353" /> 
+<color name="codac_color_b4b4b4ff" value="0.705883 0.705883 0.705883" /> 
+<color name="codac_color_b8e976ff" value="0.721569 0.913726 0.462746" /> 
+<color name="codac_color_b94fabff" value="0.725491 0.309804 0.670589" /> 
+<color name="codac_color_cd84f1ff" value="0.803922 0.517648 0.945099" /> 
+<color name="codac_color_d09747ff" value="0.815687 0.592157 0.278432" /> 
+<color name="codac_color_d13b00ff" value="0.819608 0.231373 0" /> 
+<color name="codac_color_d68616ff" value="0.839216 0.525491 0.0862746" /> 
+<color name="codac_color_d9d9d9ff" value="0.850981 0.850981 0.850981" /> 
+<color name="codac_color_e1b12cff" value="0.882353 0.694118 0.17255" /> 
+<color name="codac_color_e77f67ff" value="0.905883 0.49804 0.403922" /> 
+<color name="codac_color_f368e0ff" value="0.952942 0.407844 0.878432" /> 
+<color name="codac_color_fd9644ff" value="0.992157 0.588236 0.266667" /> 
+<color name="codac_color_fda7dfff" value="0.992157 0.654902 0.87451" /> 
+<color name="codac_color_ff9f1aff" value="1 0.62353 0.101961" /> 
+<color name="codac_color_ffd32aff" value="1 0.827451 0.164706" /> 
+<color name="codac_color_fffa65ff" value="1 0.980393 0.396079" /> 
+<color name="codac_color_ffffff00" value="1 1 1" /> 
+<color name="codac_color_ffffffff" value="1 1 1" /> 
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/> 
+     <dashstyle name="dash dotted" value="[4 2 1 2] 0"/> 
+     <dashstyle name="dashed" value="[4] 0"/> 
+     <dashstyle name="dotted" value="[1 3] 0"/> 
+     <gridsize name="10 pts (~3.5 mm)" value="10"/> 
+     <gridsize name="14 pts (~5 mm)" value="14"/> 
+     <gridsize name="16 pts (~6 mm)" value="16"/> 
+     <gridsize name="20 pts (~7 mm)" value="20"/> 
+     <gridsize name="28 pts (~10 mm)" value="28"/> 
+     <gridsize name="32 pts (~12 mm)" value="32"/> 
+     <gridsize name="4 pts" value="4"/> 
+     <gridsize name="56 pts (~20 mm)" value="56"/> 
+     <gridsize name="8 pts (~3 mm)" value="8"/> 
+<opacity name="0%" value="0"/> 
+<opacity name="10%" value="0.100001"/> 
+<opacity name="20%" value="0.200001"/> 
+<opacity name="30%" value="0.300001"/> 
+<opacity name="40%" value="0.400001"/> 
+<opacity name="50%" value="0.500001"/> 
+<opacity name="60%" value="0.600001"/> 
+<opacity name="70%" value="0.700001"/> 
+<opacity name="80%" value="0.800001"/> 
+<opacity name="90%" value="0.900001"/> 
+<opacity name="100%" value="1.0"/> 
+     <pen name="fat" value="1.2"/> 
+     <pen name="heavier" value="0.8"/> 
+     <pen name="ultrafat" value="1.5"/> 
+     <symbolsize name="large" value="5"/> 
+     <symbolsize name="small" value="2"/> 
+     <symbolsize name="tiny" value="1.1"/> 
+     <textsize name="Huge" value="\Huge"/> 
+     <textsize name="LARGE" value="\LARGE"/> 
+     <textsize name="Large" value="\Large"/> 
+     <textsize name="footnote" value="\footnotesize"/> 
+     <textsize name="huge" value="\huge"/> 
+     <textsize name="large" value="\large"/> 
+     <textsize name="small" value="\small"/> 
+     <textsize name="tiny" value="\tiny"/> 
+     <textstyle name="center" begin="\begin{center}" end="\end{center}"/> 
+     <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/> 
+     <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/> 
+     <tiling name="falling" angle="-60" step="4" width="1"/> 
+     <tiling name="rising" angle="30" step="4" width="1"/> 
+     </ipestyle> 
+     <page> 
+ <layer name="alpha"/> 
+<layer name="axes"/> 
+<layer name="outside"/> 
+<layer name="boundary"/> 
+<layer name="inside"/> 
+<view layers=" alpha axes outside boundary inside " active="alpha"/> 
+ 
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 14.563107 m 
+71.674276 14.563107 l 
+71.674276 131.116510 l 
+14.563107 131.116510 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 14.563107 m 
+131.116510 14.563107 l 
+131.116510 71.674276 l 
+71.674276 71.674276 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 71.674276 m 
+100.800971 71.674276 l 
+100.800971 131.116510 l 
+71.674276 131.116510 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 71.674276 m 
+131.116510 71.674276 l 
+131.116510 100.800971 l 
+100.800971 100.800971 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 100.800971 m 
+115.655585 100.800971 l 
+115.655585 131.116510 l 
+100.800971 131.116510 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 100.800971 m 
+131.116510 100.800971 l 
+131.116510 115.655585 l 
+115.655585 115.655585 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 131.116510 m 
+71.674276 131.116510 l 
+71.674276 190.558744 l 
+14.563107 190.558744 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 131.116510 m 
+100.800971 131.116510 l 
+100.800971 160.243205 l 
+71.674276 160.243205 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 160.243205 m 
+85.946357 160.243205 l 
+85.946357 175.097820 l 
+71.674276 175.097820 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 175.097820 m 
+85.946357 175.097820 l 
+85.946357 190.558744 l 
+71.674276 190.558744 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 190.558744 m 
+71.674276 190.558744 l 
+71.674276 252.427190 l 
+14.563107 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 14.563107 m 
+190.558744 14.563107 l 
+190.558744 71.674276 l 
+131.116510 71.674276 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 71.674276 m 
+160.243205 71.674276 l 
+160.243205 100.800971 l 
+131.116510 100.800971 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 71.674276 m 
+175.097820 71.674276 l 
+175.097820 85.946357 l 
+160.243205 85.946357 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+175.097820 71.674276 m 
+190.558744 71.674276 l 
+190.558744 85.946357 l 
+175.097820 85.946357 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 14.563107 m 
+252.427190 14.563107 l 
+252.427190 71.674276 l 
+190.558744 71.674276 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 236.335208 m 
+220.874283 236.335208 l 
+220.874283 252.427190 l 
+205.413358 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 205.413358 m 
+252.427190 205.413358 l 
+252.427190 220.874283 l 
+236.335208 220.874283 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 220.874283 m 
+252.427190 220.874283 l 
+252.427190 252.427190 l 
+220.874283 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 252.427190 m 
+71.674276 252.427190 l 
+71.674276 311.869424 l 
+14.563107 311.869424 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 311.869424 m 
+71.674276 311.869424 l 
+71.674276 373.737869 l 
+14.563107 373.737869 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 326.724038 m 
+85.946357 326.724038 l 
+85.946357 342.184963 l 
+71.674276 342.184963 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 342.184963 m 
+85.946357 342.184963 l 
+85.946357 357.645887 l 
+71.674276 357.645887 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 357.645887 m 
+100.800971 357.645887 l 
+100.800971 373.737869 l 
+71.674276 373.737869 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 252.427190 m 
+220.874283 252.427190 l 
+220.874283 281.553885 l 
+205.413358 281.553885 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 252.427190 m 
+252.427190 252.427190 l 
+252.427190 281.553885 l 
+220.874283 281.553885 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 281.553885 m 
+236.335208 281.553885 l 
+236.335208 296.408499 l 
+220.874283 296.408499 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 281.553885 m 
+252.427190 281.553885 l 
+252.427190 311.869424 l 
+236.335208 311.869424 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 373.737869 m 
+71.674276 373.737869 l 
+71.674276 435.606315 l 
+14.563107 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 373.737869 m 
+100.800971 373.737869 l 
+100.800971 404.053408 l 
+71.674276 404.053408 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 373.737869 m 
+115.655585 373.737869 l 
+115.655585 388.592484 l 
+100.800971 388.592484 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 388.592484 m 
+131.116510 388.592484 l 
+131.116510 404.053408 l 
+100.800971 404.053408 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 404.053408 m 
+131.116510 404.053408 l 
+131.116510 435.606315 l 
+71.674276 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+14.563107 435.606315 m 
+131.116510 435.606315 l 
+131.116510 500.000001 l 
+14.563107 500.000001 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 404.053408 m 
+145.388591 404.053408 l 
+145.388591 419.514333 l 
+131.116510 419.514333 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 419.514333 m 
+160.243205 419.514333 l 
+160.243205 435.606315 l 
+131.116510 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 435.606315 m 
+190.558744 435.606315 l 
+190.558744 500.000001 l 
+131.116510 500.000001 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 435.606315 m 
+205.413358 435.606315 l 
+205.413358 451.067239 l 
+190.558744 451.067239 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 451.067239 m 
+220.874283 451.067239 l 
+220.874283 467.159221 l 
+190.558744 467.159221 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 451.067239 m 
+236.335208 451.067239 l 
+236.335208 467.159221 l 
+220.874283 467.159221 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 451.067239 m 
+252.427190 451.067239 l 
+252.427190 467.159221 l 
+236.335208 467.159221 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 467.159221 m 
+252.427190 467.159221 l 
+252.427190 500.000001 l 
+190.558744 500.000001 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 14.563107 m 
+311.869424 14.563107 l 
+311.869424 71.674276 l 
+252.427190 71.674276 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 14.563107 m 
+373.737869 14.563107 l 
+373.737869 71.674276 l 
+311.869424 71.674276 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 71.674276 m 
+342.184963 71.674276 l 
+342.184963 85.946357 l 
+326.724038 85.946357 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 71.674276 m 
+357.645887 71.674276 l 
+357.645887 85.946357 l 
+342.184963 85.946357 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 71.674276 m 
+373.737869 71.674276 l 
+373.737869 100.800971 l 
+357.645887 100.800971 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 205.413358 m 
+281.553885 205.413358 l 
+281.553885 220.874283 l 
+252.427190 220.874283 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 220.874283 m 
+281.553885 220.874283 l 
+281.553885 252.427190 l 
+252.427190 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 220.874283 m 
+296.408499 220.874283 l 
+296.408499 236.335208 l 
+281.553885 236.335208 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 236.335208 m 
+311.869424 236.335208 l 
+311.869424 252.427190 l 
+281.553885 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 14.563107 m 
+435.606315 14.563107 l 
+435.606315 71.674276 l 
+373.737869 71.674276 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 71.674276 m 
+404.053408 71.674276 l 
+404.053408 100.800971 l 
+373.737869 100.800971 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 100.800971 m 
+388.592484 100.800971 l 
+388.592484 115.655585 l 
+373.737869 115.655585 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+388.592484 100.800971 m 
+404.053408 100.800971 l 
+404.053408 131.116510 l 
+388.592484 131.116510 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 71.674276 m 
+435.606315 71.674276 l 
+435.606315 131.116510 l 
+404.053408 131.116510 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 14.563107 m 
+500.000001 14.563107 l 
+500.000001 131.116510 l 
+435.606315 131.116510 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 131.116510 m 
+419.514333 131.116510 l 
+419.514333 145.388591 l 
+404.053408 145.388591 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 131.116510 m 
+435.606315 131.116510 l 
+435.606315 160.243205 l 
+419.514333 160.243205 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 131.116510 m 
+500.000001 131.116510 l 
+500.000001 190.558744 l 
+435.606315 190.558744 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 190.558744 m 
+451.067239 190.558744 l 
+451.067239 205.413358 l 
+435.606315 205.413358 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+451.067239 190.558744 m 
+467.159221 190.558744 l 
+467.159221 220.874283 l 
+451.067239 220.874283 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+451.067239 220.874283 m 
+467.159221 220.874283 l 
+467.159221 252.427190 l 
+451.067239 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+467.159221 190.558744 m 
+500.000001 190.558744 l 
+500.000001 252.427190 l 
+467.159221 252.427190 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 252.427190 m 
+281.553885 252.427190 l 
+281.553885 311.869424 l 
+252.427190 311.869424 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 252.427190 m 
+311.869424 252.427190 l 
+311.869424 281.553885 l 
+281.553885 281.553885 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 281.553885 m 
+296.408499 281.553885 l 
+296.408499 296.408499 l 
+281.553885 296.408499 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 419.514333 m 
+357.645887 419.514333 l 
+357.645887 435.606315 l 
+342.184963 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 419.514333 m 
+373.737869 419.514333 l 
+373.737869 435.606315 l 
+357.645887 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 451.067239 m 
+281.553885 451.067239 l 
+281.553885 467.159221 l 
+252.427190 467.159221 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 435.606315 m 
+311.869424 435.606315 l 
+311.869424 451.067239 l 
+296.408499 451.067239 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 451.067239 m 
+311.869424 451.067239 l 
+311.869424 467.159221 l 
+281.553885 467.159221 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 467.159221 m 
+311.869424 467.159221 l 
+311.869424 500.000001 l 
+252.427190 500.000001 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 435.606315 m 
+373.737869 435.606315 l 
+373.737869 500.000001 l 
+311.869424 500.000001 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 342.184963 m 
+435.606315 342.184963 l 
+435.606315 373.737869 l 
+419.514333 373.737869 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+451.067239 252.427190 m 
+467.159221 252.427190 l 
+467.159221 281.553885 l 
+451.067239 281.553885 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 296.408499 m 
+451.067239 296.408499 l 
+451.067239 311.869424 l 
+435.606315 311.869424 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+451.067239 281.553885 m 
+467.159221 281.553885 l 
+467.159221 311.869424 l 
+451.067239 311.869424 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+467.159221 252.427190 m 
+500.000001 252.427190 l 
+500.000001 311.869424 l 
+467.159221 311.869424 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 311.869424 m 
+500.000001 311.869424 l 
+500.000001 373.737869 l 
+435.606315 373.737869 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+388.592484 388.592484 m 
+404.053408 388.592484 l 
+404.053408 404.053408 l 
+388.592484 404.053408 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 404.053408 m 
+404.053408 404.053408 l 
+404.053408 435.606315 l 
+373.737869 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 373.737869 m 
+435.606315 373.737869 l 
+435.606315 435.606315 l 
+404.053408 435.606315 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 435.606315 m 
+435.606315 435.606315 l 
+435.606315 500.000001 l 
+373.737869 500.000001 l 
+h
+</path>
+     <path layer="outside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_4bcffaff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 373.737869 m 
+500.000001 373.737869 l 
+500.000001 500.000001 l 
+435.606315 500.000001 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 115.655585 m 
+131.116510 115.655585 l 
+131.116510 131.116510 l 
+115.655585 131.116510 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 131.116510 m 
+115.655585 131.116510 l 
+115.655585 145.388591 l 
+100.800971 145.388591 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 145.388591 m 
+115.655585 145.388591 l 
+115.655585 160.243205 l 
+100.800971 160.243205 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 131.116510 m 
+131.116510 131.116510 l 
+131.116510 145.388591 l 
+115.655585 145.388591 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 160.243205 m 
+100.800971 160.243205 l 
+100.800971 175.097820 l 
+85.946357 175.097820 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 175.097820 m 
+100.800971 175.097820 l 
+100.800971 190.558744 l 
+85.946357 190.558744 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 160.243205 m 
+115.655585 160.243205 l 
+115.655585 175.097820 l 
+100.800971 175.097820 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 190.558744 m 
+85.946357 190.558744 l 
+85.946357 205.413358 l 
+71.674276 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 190.558744 m 
+100.800971 190.558744 l 
+100.800971 205.413358 l 
+85.946357 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 205.413358 m 
+85.946357 205.413358 l 
+85.946357 220.874283 l 
+71.674276 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 220.874283 m 
+85.946357 220.874283 l 
+85.946357 236.335208 l 
+71.674276 236.335208 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 236.335208 m 
+85.946357 236.335208 l 
+85.946357 252.427190 l 
+71.674276 252.427190 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 100.800971 m 
+145.388591 100.800971 l 
+145.388591 115.655585 l 
+131.116510 115.655585 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+145.388591 100.800971 m 
+160.243205 100.800971 l 
+160.243205 115.655585 l 
+145.388591 115.655585 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 115.655585 m 
+145.388591 115.655585 l 
+145.388591 131.116510 l 
+131.116510 131.116510 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 85.946357 m 
+175.097820 85.946357 l 
+175.097820 100.800971 l 
+160.243205 100.800971 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+175.097820 85.946357 m 
+190.558744 85.946357 l 
+190.558744 100.800971 l 
+175.097820 100.800971 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 100.800971 m 
+175.097820 100.800971 l 
+175.097820 115.655585 l 
+160.243205 115.655585 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 71.674276 m 
+205.413358 71.674276 l 
+205.413358 85.946357 l 
+190.558744 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 85.946357 m 
+205.413358 85.946357 l 
+205.413358 100.800971 l 
+190.558744 100.800971 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 71.674276 m 
+220.874283 71.674276 l 
+220.874283 85.946357 l 
+205.413358 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 71.674276 m 
+236.335208 71.674276 l 
+236.335208 85.946357 l 
+220.874283 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 71.674276 m 
+252.427190 71.674276 l 
+252.427190 85.946357 l 
+236.335208 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 205.413358 m 
+220.874283 205.413358 l 
+220.874283 220.874283 l 
+205.413358 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 220.874283 m 
+205.413358 220.874283 l 
+205.413358 236.335208 l 
+190.558744 236.335208 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 220.874283 m 
+220.874283 220.874283 l 
+220.874283 236.335208 l 
+205.413358 236.335208 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 236.335208 m 
+205.413358 236.335208 l 
+205.413358 252.427190 l 
+190.558744 252.427190 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 190.558744 m 
+236.335208 190.558744 l 
+236.335208 205.413358 l 
+220.874283 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 205.413358 m 
+236.335208 205.413358 l 
+236.335208 220.874283 l 
+220.874283 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 190.558744 m 
+252.427190 190.558744 l 
+252.427190 205.413358 l 
+236.335208 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 252.427190 m 
+85.946357 252.427190 l 
+85.946357 266.699271 l 
+71.674276 266.699271 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 266.699271 m 
+85.946357 266.699271 l 
+85.946357 281.553885 l 
+71.674276 281.553885 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 281.553885 m 
+85.946357 281.553885 l 
+85.946357 296.408499 l 
+71.674276 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 296.408499 m 
+85.946357 296.408499 l 
+85.946357 311.869424 l 
+71.674276 311.869424 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+71.674276 311.869424 m 
+85.946357 311.869424 l 
+85.946357 326.724038 l 
+71.674276 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 311.869424 m 
+100.800971 311.869424 l 
+100.800971 326.724038 l 
+85.946357 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 326.724038 m 
+100.800971 326.724038 l 
+100.800971 342.184963 l 
+85.946357 342.184963 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 342.184963 m 
+100.800971 342.184963 l 
+100.800971 357.645887 l 
+85.946357 357.645887 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 342.184963 m 
+115.655585 342.184963 l 
+115.655585 357.645887 l 
+100.800971 357.645887 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 357.645887 m 
+115.655585 357.645887 l 
+115.655585 373.737869 l 
+100.800971 373.737869 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 357.645887 m 
+131.116510 357.645887 l 
+131.116510 373.737869 l 
+115.655585 373.737869 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 252.427190 m 
+205.413358 252.427190 l 
+205.413358 266.699271 l 
+190.558744 266.699271 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 266.699271 m 
+205.413358 266.699271 l 
+205.413358 281.553885 l 
+190.558744 281.553885 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 281.553885 m 
+205.413358 281.553885 l 
+205.413358 296.408499 l 
+190.558744 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 281.553885 m 
+220.874283 281.553885 l 
+220.874283 296.408499 l 
+205.413358 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 296.408499 m 
+220.874283 296.408499 l 
+220.874283 311.869424 l 
+205.413358 311.869424 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 296.408499 m 
+236.335208 296.408499 l 
+236.335208 311.869424 l 
+220.874283 311.869424 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 311.869424 m 
+236.335208 311.869424 l 
+236.335208 326.724038 l 
+220.874283 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 311.869424 m 
+252.427190 311.869424 l 
+252.427190 326.724038 l 
+236.335208 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 373.737869 m 
+131.116510 373.737869 l 
+131.116510 388.592484 l 
+115.655585 388.592484 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 373.737869 m 
+145.388591 373.737869 l 
+145.388591 388.592484 l 
+131.116510 388.592484 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 388.592484 m 
+145.388591 388.592484 l 
+145.388591 404.053408 l 
+131.116510 404.053408 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+145.388591 388.592484 m 
+160.243205 388.592484 l 
+160.243205 404.053408 l 
+145.388591 404.053408 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+145.388591 404.053408 m 
+160.243205 404.053408 l 
+160.243205 419.514333 l 
+145.388591 419.514333 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 404.053408 m 
+175.097820 404.053408 l 
+175.097820 419.514333 l 
+160.243205 419.514333 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 419.514333 m 
+175.097820 419.514333 l 
+175.097820 435.606315 l 
+160.243205 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+175.097820 419.514333 m 
+190.558744 419.514333 l 
+190.558744 435.606315 l 
+175.097820 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 419.514333 m 
+205.413358 419.514333 l 
+205.413358 435.606315 l 
+190.558744 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 419.514333 m 
+220.874283 419.514333 l 
+220.874283 435.606315 l 
+205.413358 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 435.606315 m 
+220.874283 435.606315 l 
+220.874283 451.067239 l 
+205.413358 451.067239 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 435.606315 m 
+236.335208 435.606315 l 
+236.335208 451.067239 l 
+220.874283 451.067239 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 435.606315 m 
+252.427190 435.606315 l 
+252.427190 451.067239 l 
+236.335208 451.067239 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 71.674276 m 
+266.699271 71.674276 l 
+266.699271 85.946357 l 
+252.427190 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+266.699271 71.674276 m 
+281.553885 71.674276 l 
+281.553885 85.946357 l 
+266.699271 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 71.674276 m 
+296.408499 71.674276 l 
+296.408499 85.946357 l 
+281.553885 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 71.674276 m 
+311.869424 71.674276 l 
+311.869424 85.946357 l 
+296.408499 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 71.674276 m 
+326.724038 71.674276 l 
+326.724038 85.946357 l 
+311.869424 85.946357 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 85.946357 m 
+326.724038 85.946357 l 
+326.724038 100.800971 l 
+311.869424 100.800971 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 85.946357 m 
+342.184963 85.946357 l 
+342.184963 100.800971 l 
+326.724038 100.800971 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 85.946357 m 
+357.645887 85.946357 l 
+357.645887 100.800971 l 
+342.184963 100.800971 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 100.800971 m 
+357.645887 100.800971 l 
+357.645887 115.655585 l 
+342.184963 115.655585 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 100.800971 m 
+373.737869 100.800971 l 
+373.737869 115.655585 l 
+357.645887 115.655585 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 115.655585 m 
+373.737869 115.655585 l 
+373.737869 131.116510 l 
+357.645887 131.116510 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 190.558744 m 
+266.699271 190.558744 l 
+266.699271 205.413358 l 
+252.427190 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+266.699271 190.558744 m 
+281.553885 190.558744 l 
+281.553885 205.413358 l 
+266.699271 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 190.558744 m 
+296.408499 190.558744 l 
+296.408499 205.413358 l 
+281.553885 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 205.413358 m 
+296.408499 205.413358 l 
+296.408499 220.874283 l 
+281.553885 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 205.413358 m 
+311.869424 205.413358 l 
+311.869424 220.874283 l 
+296.408499 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 220.874283 m 
+311.869424 220.874283 l 
+311.869424 236.335208 l 
+296.408499 236.335208 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 220.874283 m 
+326.724038 220.874283 l 
+326.724038 236.335208 l 
+311.869424 236.335208 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 236.335208 m 
+326.724038 236.335208 l 
+326.724038 252.427190 l 
+311.869424 252.427190 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 115.655585 m 
+388.592484 115.655585 l 
+388.592484 131.116510 l 
+373.737869 131.116510 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 131.116510 m 
+388.592484 131.116510 l 
+388.592484 145.388591 l 
+373.737869 145.388591 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+388.592484 131.116510 m 
+404.053408 131.116510 l 
+404.053408 145.388591 l 
+388.592484 145.388591 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+388.592484 145.388591 m 
+404.053408 145.388591 l 
+404.053408 160.243205 l 
+388.592484 160.243205 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 145.388591 m 
+419.514333 145.388591 l 
+419.514333 160.243205 l 
+404.053408 160.243205 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 160.243205 m 
+419.514333 160.243205 l 
+419.514333 175.097820 l 
+404.053408 175.097820 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 160.243205 m 
+435.606315 160.243205 l 
+435.606315 175.097820 l 
+419.514333 175.097820 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 175.097820 m 
+435.606315 175.097820 l 
+435.606315 190.558744 l 
+419.514333 190.558744 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 190.558744 m 
+435.606315 190.558744 l 
+435.606315 205.413358 l 
+419.514333 205.413358 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 205.413358 m 
+435.606315 205.413358 l 
+435.606315 220.874283 l 
+419.514333 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 205.413358 m 
+451.067239 205.413358 l 
+451.067239 220.874283 l 
+435.606315 220.874283 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 220.874283 m 
+451.067239 220.874283 l 
+451.067239 236.335208 l 
+435.606315 236.335208 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 236.335208 m 
+451.067239 236.335208 l 
+451.067239 252.427190 l 
+435.606315 252.427190 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 296.408499 m 
+296.408499 296.408499 l 
+296.408499 311.869424 l 
+281.553885 311.869424 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 281.553885 m 
+311.869424 281.553885 l 
+311.869424 296.408499 l 
+296.408499 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 296.408499 m 
+311.869424 296.408499 l 
+311.869424 311.869424 l 
+296.408499 311.869424 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 311.869424 m 
+266.699271 311.869424 l 
+266.699271 326.724038 l 
+252.427190 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+266.699271 311.869424 m 
+281.553885 311.869424 l 
+281.553885 326.724038 l 
+266.699271 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 311.869424 m 
+296.408499 311.869424 l 
+296.408499 326.724038 l 
+281.553885 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 252.427190 m 
+326.724038 252.427190 l 
+326.724038 266.699271 l 
+311.869424 266.699271 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 266.699271 m 
+326.724038 266.699271 l 
+326.724038 281.553885 l 
+311.869424 281.553885 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 281.553885 m 
+326.724038 281.553885 l 
+326.724038 296.408499 l 
+311.869424 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 419.514333 m 
+296.408499 419.514333 l 
+296.408499 435.606315 l 
+281.553885 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 419.514333 m 
+311.869424 419.514333 l 
+311.869424 435.606315 l 
+296.408499 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 388.592484 m 
+373.737869 388.592484 l 
+373.737869 404.053408 l 
+357.645887 404.053408 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 404.053408 m 
+342.184963 404.053408 l 
+342.184963 419.514333 l 
+326.724038 419.514333 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 419.514333 m 
+326.724038 419.514333 l 
+326.724038 435.606315 l 
+311.869424 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 419.514333 m 
+342.184963 419.514333 l 
+342.184963 435.606315 l 
+326.724038 435.606315 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 404.053408 m 
+357.645887 404.053408 l 
+357.645887 419.514333 l 
+342.184963 419.514333 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 404.053408 m 
+373.737869 404.053408 l 
+373.737869 419.514333 l 
+357.645887 419.514333 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 435.606315 m 
+266.699271 435.606315 l 
+266.699271 451.067239 l 
+252.427190 451.067239 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+266.699271 435.606315 m 
+281.553885 435.606315 l 
+281.553885 451.067239 l 
+266.699271 451.067239 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 435.606315 m 
+296.408499 435.606315 l 
+296.408499 451.067239 l 
+281.553885 451.067239 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 281.553885 m 
+435.606315 281.553885 l 
+435.606315 296.408499 l 
+419.514333 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 296.408499 m 
+435.606315 296.408499 l 
+435.606315 311.869424 l 
+419.514333 311.869424 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+388.592484 357.645887 m 
+404.053408 357.645887 l 
+404.053408 373.737869 l 
+388.592484 373.737869 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 326.724038 m 
+419.514333 326.724038 l 
+419.514333 342.184963 l 
+404.053408 342.184963 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 311.869424 m 
+435.606315 311.869424 l 
+435.606315 326.724038 l 
+419.514333 326.724038 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+419.514333 326.724038 m 
+435.606315 326.724038 l 
+435.606315 342.184963 l 
+419.514333 342.184963 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 342.184963 m 
+419.514333 342.184963 l 
+419.514333 357.645887 l 
+404.053408 357.645887 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 357.645887 m 
+419.514333 357.645887 l 
+419.514333 373.737869 l 
+404.053408 373.737869 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 252.427190 m 
+451.067239 252.427190 l 
+451.067239 266.699271 l 
+435.606315 266.699271 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 266.699271 m 
+451.067239 266.699271 l 
+451.067239 281.553885 l 
+435.606315 281.553885 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+435.606315 281.553885 m 
+451.067239 281.553885 l 
+451.067239 296.408499 l 
+435.606315 296.408499 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 373.737869 m 
+388.592484 373.737869 l 
+388.592484 388.592484 l 
+373.737869 388.592484 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 388.592484 m 
+388.592484 388.592484 l 
+388.592484 404.053408 l 
+373.737869 404.053408 l 
+h
+</path>
+     <path layer="boundary" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_ffd32aff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+388.592484 373.737869 m 
+404.053408 373.737869 l 
+404.053408 388.592484 l 
+388.592484 388.592484 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 145.388591 m 
+131.116510 145.388591 l 
+131.116510 160.243205 l 
+115.655585 160.243205 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 160.243205 m 
+131.116510 160.243205 l 
+131.116510 175.097820 l 
+115.655585 175.097820 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 175.097820 m 
+131.116510 175.097820 l 
+131.116510 190.558744 l 
+100.800971 190.558744 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 205.413358 m 
+100.800971 205.413358 l 
+100.800971 220.874283 l 
+85.946357 220.874283 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 190.558744 m 
+131.116510 190.558744 l 
+131.116510 220.874283 l 
+100.800971 220.874283 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 220.874283 m 
+100.800971 220.874283 l 
+100.800971 236.335208 l 
+85.946357 236.335208 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 236.335208 m 
+100.800971 236.335208 l 
+100.800971 252.427190 l 
+85.946357 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 220.874283 m 
+131.116510 220.874283 l 
+131.116510 252.427190 l 
+100.800971 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+145.388591 115.655585 m 
+160.243205 115.655585 l 
+160.243205 131.116510 l 
+145.388591 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 115.655585 m 
+175.097820 115.655585 l 
+175.097820 131.116510 l 
+160.243205 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+175.097820 100.800971 m 
+190.558744 100.800971 l 
+190.558744 131.116510 l 
+175.097820 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 85.946357 m 
+220.874283 85.946357 l 
+220.874283 100.800971 l 
+205.413358 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 100.800971 m 
+220.874283 100.800971 l 
+220.874283 131.116510 l 
+190.558744 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 85.946357 m 
+236.335208 85.946357 l 
+236.335208 100.800971 l 
+220.874283 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 85.946357 m 
+252.427190 85.946357 l 
+252.427190 100.800971 l 
+236.335208 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 100.800971 m 
+252.427190 100.800971 l 
+252.427190 131.116510 l 
+220.874283 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 131.116510 m 
+190.558744 131.116510 l 
+190.558744 252.427190 l 
+131.116510 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 131.116510 m 
+252.427190 131.116510 l 
+252.427190 190.558744 l 
+190.558744 190.558744 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 190.558744 m 
+205.413358 190.558744 l 
+205.413358 220.874283 l 
+190.558744 220.874283 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+205.413358 190.558744 m 
+220.874283 190.558744 l 
+220.874283 205.413358 l 
+205.413358 205.413358 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 252.427190 m 
+100.800971 252.427190 l 
+100.800971 266.699271 l 
+85.946357 266.699271 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 266.699271 m 
+100.800971 266.699271 l 
+100.800971 281.553885 l 
+85.946357 281.553885 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 252.427190 m 
+131.116510 252.427190 l 
+131.116510 281.553885 l 
+100.800971 281.553885 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 281.553885 m 
+100.800971 281.553885 l 
+100.800971 296.408499 l 
+85.946357 296.408499 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+85.946357 296.408499 m 
+100.800971 296.408499 l 
+100.800971 311.869424 l 
+85.946357 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 281.553885 m 
+131.116510 281.553885 l 
+131.116510 311.869424 l 
+100.800971 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+100.800971 311.869424 m 
+131.116510 311.869424 l 
+131.116510 342.184963 l 
+100.800971 342.184963 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+115.655585 342.184963 m 
+131.116510 342.184963 l 
+131.116510 357.645887 l 
+115.655585 357.645887 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+131.116510 252.427190 m 
+190.558744 252.427190 l 
+190.558744 373.737869 l 
+131.116510 373.737869 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 296.408499 m 
+205.413358 296.408499 l 
+205.413358 311.869424 l 
+190.558744 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 311.869424 m 
+220.874283 311.869424 l 
+220.874283 373.737869 l 
+190.558744 373.737869 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 326.724038 m 
+236.335208 326.724038 l 
+236.335208 342.184963 l 
+220.874283 342.184963 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+236.335208 326.724038 m 
+252.427190 326.724038 l 
+252.427190 342.184963 l 
+236.335208 342.184963 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 342.184963 m 
+252.427190 342.184963 l 
+252.427190 373.737869 l 
+220.874283 373.737869 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+145.388591 373.737869 m 
+160.243205 373.737869 l 
+160.243205 388.592484 l 
+145.388591 388.592484 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+160.243205 373.737869 m 
+190.558744 373.737869 l 
+190.558744 404.053408 l 
+160.243205 404.053408 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+175.097820 404.053408 m 
+190.558744 404.053408 l 
+190.558744 419.514333 l 
+175.097820 419.514333 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 373.737869 m 
+252.427190 373.737869 l 
+252.427190 404.053408 l 
+190.558744 404.053408 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+190.558744 404.053408 m 
+220.874283 404.053408 l 
+220.874283 419.514333 l 
+190.558744 419.514333 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+220.874283 404.053408 m 
+252.427190 404.053408 l 
+252.427190 435.606315 l 
+220.874283 435.606315 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 85.946357 m 
+266.699271 85.946357 l 
+266.699271 100.800971 l 
+252.427190 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+266.699271 85.946357 m 
+281.553885 85.946357 l 
+281.553885 100.800971 l 
+266.699271 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 100.800971 m 
+281.553885 100.800971 l 
+281.553885 131.116510 l 
+252.427190 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 85.946357 m 
+296.408499 85.946357 l 
+296.408499 100.800971 l 
+281.553885 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 85.946357 m 
+311.869424 85.946357 l 
+311.869424 100.800971 l 
+296.408499 100.800971 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 100.800971 m 
+311.869424 100.800971 l 
+311.869424 131.116510 l 
+281.553885 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 100.800971 m 
+342.184963 100.800971 l 
+342.184963 131.116510 l 
+311.869424 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 115.655585 m 
+357.645887 115.655585 l 
+357.645887 131.116510 l 
+342.184963 131.116510 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 131.116510 m 
+311.869424 131.116510 l 
+311.869424 190.558744 l 
+252.427190 190.558744 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 190.558744 m 
+311.869424 190.558744 l 
+311.869424 205.413358 l 
+296.408499 205.413358 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 131.116510 m 
+373.737869 131.116510 l 
+373.737869 190.558744 l 
+311.869424 190.558744 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 190.558744 m 
+342.184963 190.558744 l 
+342.184963 220.874283 l 
+311.869424 220.874283 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 220.874283 m 
+342.184963 220.874283 l 
+342.184963 236.335208 l 
+326.724038 236.335208 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 236.335208 m 
+342.184963 236.335208 l 
+342.184963 252.427190 l 
+326.724038 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 190.558744 m 
+373.737869 190.558744 l 
+373.737869 252.427190 l 
+342.184963 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 145.388591 m 
+388.592484 145.388591 l 
+388.592484 160.243205 l 
+373.737869 160.243205 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 160.243205 m 
+404.053408 160.243205 l 
+404.053408 190.558744 l 
+373.737869 190.558744 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 175.097820 m 
+419.514333 175.097820 l 
+419.514333 190.558744 l 
+404.053408 190.558744 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 190.558744 m 
+404.053408 190.558744 l 
+404.053408 252.427190 l 
+373.737869 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 190.558744 m 
+419.514333 190.558744 l 
+419.514333 220.874283 l 
+404.053408 220.874283 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 220.874283 m 
+435.606315 220.874283 l 
+435.606315 252.427190 l 
+404.053408 252.427190 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 326.724038 m 
+281.553885 326.724038 l 
+281.553885 342.184963 l 
+252.427190 342.184963 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+296.408499 311.869424 m 
+311.869424 311.869424 l 
+311.869424 326.724038 l 
+296.408499 326.724038 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 326.724038 m 
+311.869424 326.724038 l 
+311.869424 342.184963 l 
+281.553885 342.184963 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 342.184963 m 
+311.869424 342.184963 l 
+311.869424 373.737869 l 
+252.427190 373.737869 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 252.427190 m 
+342.184963 252.427190 l 
+342.184963 281.553885 l 
+326.724038 281.553885 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 296.408499 m 
+326.724038 296.408499 l 
+326.724038 311.869424 l 
+311.869424 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+326.724038 281.553885 m 
+342.184963 281.553885 l 
+342.184963 311.869424 l 
+326.724038 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 252.427190 m 
+373.737869 252.427190 l 
+373.737869 311.869424 l 
+342.184963 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 311.869424 m 
+373.737869 311.869424 l 
+373.737869 373.737869 l 
+311.869424 373.737869 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 373.737869 m 
+311.869424 373.737869 l 
+311.869424 404.053408 l 
+252.427190 404.053408 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+252.427190 404.053408 m 
+281.553885 404.053408 l 
+281.553885 435.606315 l 
+252.427190 435.606315 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+281.553885 404.053408 m 
+311.869424 404.053408 l 
+311.869424 419.514333 l 
+281.553885 419.514333 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 373.737869 m 
+342.184963 373.737869 l 
+342.184963 404.053408 l 
+311.869424 404.053408 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+342.184963 373.737869 m 
+357.645887 373.737869 l 
+357.645887 404.053408 l 
+342.184963 404.053408 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+357.645887 373.737869 m 
+373.737869 373.737869 l 
+373.737869 388.592484 l 
+357.645887 388.592484 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+311.869424 404.053408 m 
+326.724038 404.053408 l 
+326.724038 419.514333 l 
+311.869424 419.514333 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 252.427190 m 
+404.053408 252.427190 l 
+404.053408 311.869424 l 
+373.737869 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 252.427190 m 
+435.606315 252.427190 l 
+435.606315 281.553885 l 
+404.053408 281.553885 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 281.553885 m 
+419.514333 281.553885 l 
+419.514333 311.869424 l 
+404.053408 311.869424 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 311.869424 m 
+404.053408 311.869424 l 
+404.053408 342.184963 l 
+373.737869 342.184963 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 342.184963 m 
+404.053408 342.184963 l 
+404.053408 357.645887 l 
+373.737869 357.645887 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+373.737869 357.645887 m 
+388.592484 357.645887 l 
+388.592484 373.737869 l 
+373.737869 373.737869 l 
+h
+</path>
+     <path layer="inside" 
+     stroke="codac_color_707070ff" 
+     fill="codac_color_90f200ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="0.5" 
+     join="2"> 
+404.053408 311.869424 m 
+419.514333 311.869424 l 
+419.514333 326.724038 l 
+404.053408 326.724038 l 
+h
+</path>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+14.563107 14.563107 m 
+500.000001 14.563107 l 
+</path>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+14.563107 14.563107 m 
+14.563107 500.000001 l 
+</path>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+14.563107 4.854369 m 
+14.563107 14.563107 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="16.990292 4.854369" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">-4</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+135.922331 4.854369 m 
+135.922331 14.563107 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="138.349515 4.854369" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">-2</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+257.281554 4.854369 m 
+257.281554 14.563107 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="259.708738 4.854369" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">0</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+378.640777 4.854369 m 
+378.640777 14.563107 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="381.067962 4.854369" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">2</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+500.000001 4.854369 m 
+500.000001 14.563107 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="502.427185 4.854369" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">4</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+4.854369 14.563107 m 
+14.563107 14.563107 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="0.242719 16.990292" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">-4</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+4.854369 135.922331 m 
+14.563107 135.922331 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="0.242719 138.349515" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">-2</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+4.854369 257.281554 m 
+14.563107 257.281554 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="4.854369 259.708738" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">0</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+4.854369 378.640777 m 
+14.563107 378.640777 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="4.854369 381.067962" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">2</text>
+     <path layer="axes" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     dash="normal" 
+     pen="1.000061%" 
+     join="2"> 
+4.854369 500.000001 m 
+14.563107 500.000001 l 
+</path>
+     <text layer="axes" 
+     transformations="translations" 
+     pos="4.854369 502.427185" 
+     stroke="codac_color_000000ff" 
+     fill="codac_color_000000ff" 
+     opacity="100%" 
+     stroke-opacity="100%" 
+     type="label" 
+     width="485.436894" 
+     height="485.436894" 
+     depth="0" 
+     valign="baseline">4</text>
+</page>
+</ipe>
