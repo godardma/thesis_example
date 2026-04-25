@@ -16,8 +16,8 @@ boxes_to_contract = [IntervalVector([[-3,6.5],[-5,-2]]),
                      IntervalVector([[2.5,3.5],[0.5,2.5]])]
 
 fig = Figure2D("Himmelblau", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig.set_window_properties([50,50],[500,500]) # set the window position and size
-fig.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig.set_window_properties([50,50],[500,500])
+fig.set_axes(x0)
 
 L_bound = p.boxes(PavingOut.outer)
 

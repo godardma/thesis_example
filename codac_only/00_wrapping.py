@@ -1,8 +1,8 @@
 from codac import *
 
 fig = Figure2D("Wrapping rotation", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig.set_window_properties([50,50],[500,500]) # set the window position and size
-fig.set_axes(axis(0,[-1.4,0.5]), axis(1,[-0.5,1.4])) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig.set_window_properties([50,50],[500,500])
+fig.set_axes(axis(0,[-1.4,0.5]), axis(1,[-0.5,1.4]))
 
 X0 = IntervalVector([[-0.1,0.1],[0.95,1.05]]) # initial set
 
