@@ -73,4 +73,4 @@ fig1.draw_circle(B2,r4)
 
 ## Support arcs
 
-fig1.draw_pie(O,R2,theta_O_R2_1,Color.red())
+fig1.draw_pie(O,R2,theta_O_R2_1,StyleProperties(Color.red(),"w:0.1"))
