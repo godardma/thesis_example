@@ -224,18 +224,26 @@ X_plus_no_contract = []
 t0 = time.time()
 pave_no_contract(CtcTryskell, IntervalVector(x0), 0.25, X_plus_no_contract)
 
+area_no_contract = 0
+for box in X_plus_no_contract:
+  area_no_contract += box.volume()
+  fig3.draw_box(box,StyleProperties.boundary())
+
 print("Number of boxes in the paving without contractors: ", len(X_plus_no_contract))
 print("Time taken for paving without contractors: ", time.time() - t0, " seconds")
-
-for box in X_plus_no_contract:
-  fig3.draw_box(box,StyleProperties.boundary())
+print("Total area covered by the paving without contractors: ", area_no_contract)
+print("Mean area of the boxes in the paving without contractors: ", area_no_contract/len(X_plus_no_contract))
 
 X_plus_contract = []
 t0 = time.time()
 pave_contract(CtcTryskell, IntervalVector(x0), 0.25, X_plus_contract)
 
+area_contract = 0
 for box in X_plus_contract:
+  area_contract += box.volume()
   fig2.draw_box(box,StyleProperties.boundary())
 
 print("Number of boxes in the paving with contractors: ", len(X_plus_contract))
 print("Time taken for paving with contractors: ", time.time() - t0, " seconds")
+print("Total area covered by the paving with contractors: ", area_contract)
+print("Mean area of the boxes in the paving with contractors: ", area_contract/len(X_plus_contract))
