@@ -1,6 +1,8 @@
 from codac import *
 import numpy as np
 
+import time
+
 def CtcTryskell(x):
   x_c = IntervalVector.empty(2)
   ctcPolar = CtcPolar()
@@ -156,15 +158,16 @@ fig1 = Figure2D("Construction", GraphicOutput.VIBES)
 fig1.set_window_properties([50,50],[500,500]) # set the window position and size
 fig1.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
 
+fig3 = Figure2D("Pave_without_contractors", GraphicOutput.VIBES | GraphicOutput.IPE)
+fig3.set_window_properties([600,50],[500,500]) # set the window position and size
+fig3.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig3.draw_box(x0,StyleProperties.outside())
+
 fig2 = Figure2D("Pave_with_contractors", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig2.set_window_properties([600,50],[500,500]) # set the window position and size
+fig2.set_window_properties([1150,50],[500,500]) # set the window position and size
 fig2.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
 fig2.draw_box(x0,StyleProperties.outside())
 
-fig3 = Figure2D("Pave_without_contractors", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig3.set_window_properties([1150,50],[500,500]) # set the window position and size
-fig3.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
-fig3.draw_box(x0,StyleProperties.outside())
 
 ## Support circles
 
@@ -218,13 +221,21 @@ fig1.draw_pie(A3,r3,theta_A3_r3_1,StyleProperties(Color.red()))
 # Paving
 
 X_plus_no_contract = []
-pave_no_contract(CtcTryskell, IntervalVector(x0), 0.2, X_plus_no_contract)
+t0 = time.time()
+pave_no_contract(CtcTryskell, IntervalVector(x0), 0.25, X_plus_no_contract)
+
+print("Number of boxes in the paving without contractors: ", len(X_plus_no_contract))
+print("Time taken for paving without contractors: ", time.time() - t0, " seconds")
 
 for box in X_plus_no_contract:
   fig3.draw_box(box,StyleProperties.boundary())
 
 X_plus_contract = []
-pave_contract(CtcTryskell, IntervalVector(x0), 0.2, X_plus_contract)
+t0 = time.time()
+pave_contract(CtcTryskell, IntervalVector(x0), 0.25, X_plus_contract)
 
 for box in X_plus_contract:
   fig2.draw_box(box,StyleProperties.boundary())
+
+print("Number of boxes in the paving with contractors: ", len(X_plus_contract))
+print("Time taken for paving with contractors: ", time.time() - t0, " seconds")
