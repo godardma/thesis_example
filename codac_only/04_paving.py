@@ -155,17 +155,17 @@ x0 = IntervalVector([[-10,10],[-10,10]])
 # Construction of the triskell
 
 fig1 = Figure2D("Construction", GraphicOutput.VIBES)
-fig1.set_window_properties([50,50],[500,500]) # set the window position and size
-fig1.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig1.set_window_properties([50,50],[500,500]) 
+fig1.set_axes(x0)
 
 fig3 = Figure2D("Pave_without_contractors", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig3.set_window_properties([600,50],[500,500]) # set the window position and size
-fig3.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig3.set_window_properties([600,50],[500,500]) 
+fig3.set_axes(x0)
 fig3.draw_box(x0,StyleProperties.outside())
 
 fig2 = Figure2D("Pave_with_contractors", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig2.set_window_properties([1150,50],[500,500]) # set the window position and size
-fig2.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig2.set_window_properties([1150,50],[500,500]) 
+fig2.set_axes(x0)
 fig2.draw_box(x0,StyleProperties.outside())
 
 

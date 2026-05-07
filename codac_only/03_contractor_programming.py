@@ -14,9 +14,9 @@ box_to_contract = IntervalVector([[0.5,1.5],[1,2.5]])
 
 
 fig = Figure2D("constraint_programming", GraphicOutput.VIBES | GraphicOutput.IPE)
-fig.set_window_properties([50,50],[500,500]) # set the window position and size
+fig.set_window_properties([50,50],[500,500]) 
 x0 = IntervalVector([[-3,4],[-3,4]])
-fig.set_axes(x0) # set the x-axis index to 0 and its range to [-10,10], same for y with index 1
+fig.set_axes(x0)
 
 fig.draw_point(a_1)
 fig.draw_point(a_2)
