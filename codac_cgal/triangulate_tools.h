@@ -20,12 +20,38 @@ static ColorMap peibos_cmap()
 void triangulate(const vector<Parallelepiped>& v_par, const IntervalVector& init_box, const string& name)
 {
   Figure2D fig_2d(name, GraphicOutput::VIBES | GraphicOutput::IPE); 
+  Figure2D fig_inside(name+"_polygon_inside", GraphicOutput::VIBES | GraphicOutput::IPE); 
+  Figure2D fig_outside(name+"_polygon_outside", GraphicOutput::VIBES | GraphicOutput::IPE); 
+
 
   fig_2d.set_axes(axis(0,{init_box[0].lb(),init_box[0].ub()}),axis(1,{init_box[1].lb(),init_box[1].ub()}));
   fig_2d.set_window_properties({50,50},{500,500});
 
+  IntervalVector bbox (init_box);
+  bbox.inflate(0.2);
+
+  fig_inside.set_axes(bbox);
+  fig_inside.set_window_properties({50,600},{500,500});
+
+  fig_outside.set_axes(bbox);
+  fig_outside.set_window_properties({600,600},{500,500});
+
+  fig_outside.draw_box(init_box, StyleProperties(Color::red(),"w:0.02"));
+
   for (auto& p : v_par)
       fig_2d.draw_parallelepiped({p.c, p.A}, StyleProperties::boundary());
+
+    Polygon_with_holes_2 poly_with_holes = generate_polygon_with_hole(v_par);
+
+    Polygon_2 outer_boundary = oriented_polygon(poly_with_holes.outer_boundary());
+    fig_inside.draw_polygon(to_codac(outer_boundary), StyleProperties(Color::red(),"w:0.02"));
+    fig_outside.draw_polygon(to_codac(outer_boundary), {Color::black(),Color::black(0.5)});
+
+    for (auto it = poly_with_holes.holes_begin(); it != poly_with_holes.holes_end(); ++it) 
+    {
+        Polygon_2 hole = oriented_polygon(*it);
+        fig_inside.draw_polygon(to_codac(hole), {Color::black(),Color::black(0.5)});
+    }
 
   vector<vector<Polygon>> inside_polygons;
   vector<vector<Polygon>> outside_polygons;
