@@ -13,7 +13,7 @@ for i in range (nb_parallelepiped):
   X = IntervalVector([Interval(i*delta_angle,(i+1)*delta_angle)])
   p = f.parallelepiped_eval(X)
   L_p.append(p)
-  ctc_union |= CtcParallelepiped(p)
+  ctc_union |= CtcWrapper_Parallelepiped(p)
 
 x0 = IntervalVector([[-1.5,1.5],[-1.5,1.5]]) 
 p = pave(x0,ctc_union,0.15)

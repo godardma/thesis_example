@@ -17,7 +17,7 @@ int main()
         IntervalVector X ({Interval(i*delta_theta, (i+1)*delta_theta)});
         Parallelepiped p = f.parallelepiped_eval(X);
         L_p.push_back(p);
-        ctc_union |= CtcParallelepiped(p);
+        ctc_union |= CtcWrapper(p);
     }
 
     IntervalVector x0({{-1.5,1.5},{-1.5,1.5}});

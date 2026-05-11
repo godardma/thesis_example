@@ -32,7 +32,7 @@ endif()
 
 find_package(CGAL REQUIRED)
 
-add_executable(conform conform.cpp)
-target_compile_options(conform PUBLIC ${CODAC_CXX_FLAGS})
-target_include_directories(conform SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
-target_link_libraries(conform PUBLIC ${CODAC_LIBRARIES} CGAL::CGAL)
+add_executable(08_triangulate_parallelepiped_circle 08_triangulate_parallelepiped_circle.cpp)
+target_compile_options(08_triangulate_parallelepiped_circle PUBLIC ${CODAC_CXX_FLAGS})
+target_include_directories(08_triangulate_parallelepiped_circle SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
+target_link_libraries(08_triangulate_parallelepiped_circle PUBLIC ${CODAC_LIBRARIES} CGAL::CGAL)
