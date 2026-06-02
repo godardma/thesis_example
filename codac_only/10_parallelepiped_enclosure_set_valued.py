@@ -45,8 +45,6 @@ fig3.set_axes(y0)
 
 figs = [fig0,fig1,fig2,fig3]
 
-
-
 for i in range (len(epsilons)):
   Lx,Lp =PEIB(f,x0,epsilons[i])
   for p in Lp:
