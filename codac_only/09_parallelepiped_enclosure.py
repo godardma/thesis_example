@@ -23,8 +23,6 @@ def PEIB(f,x0,epsilon):
     Lp.append(p)
     
   return Lx, Lp
-  
-  
 
 X = VectorVar(2)
 psi_0 = AnalyticFunction([X],[1/sqrt(1+sqr(X[0])+sqr(X[1])),X[0]/sqrt(1+sqr(X[0])+sqr(X[1])),X[1]/sqrt(1+sqr(X[0])+sqr(X[1]))])
