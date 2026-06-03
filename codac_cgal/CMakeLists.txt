@@ -36,3 +36,8 @@ add_executable(08_triangulate_parallelepiped_circle 08_triangulate_parallelepipe
 target_compile_options(08_triangulate_parallelepiped_circle PUBLIC ${CODAC_CXX_FLAGS})
 target_include_directories(08_triangulate_parallelepiped_circle SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
 target_link_libraries(08_triangulate_parallelepiped_circle PUBLIC ${CODAC_LIBRARIES} CGAL::CGAL)
+
+add_executable(13_peibos_triangulate 13_peibos_triangulate.cpp)
+target_compile_options(13_peibos_triangulate PUBLIC ${CODAC_CXX_FLAGS})
+target_include_directories(13_peibos_triangulate SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
+target_link_libraries(13_peibos_triangulate PUBLIC ${CODAC_LIBRARIES} CGAL::CGAL)
