@@ -37,3 +37,13 @@
     capd::capd
     Ibex::ibex
   )
+
+  add_executable(15_lorenz 15_lorenz.cpp)
+  target_compile_options(15_lorenz PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(15_lorenz SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(15_lorenz PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )

@@ -11,8 +11,6 @@ int main()
   ColorMap cmap = ColorMap::rainbow();
   VectorVar X(1);
 
-  // Pendulum
-
   capd::IMap vectorField("par:l,g;var:t,w;fun:w,-sin(t)*g/l - 0.5*w;");
  
   vectorField.setParameter("l",capd::interval(2.));
