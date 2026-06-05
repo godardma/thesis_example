@@ -47,3 +47,13 @@
     capd::capd
     Ibex::ibex
   )
+  
+  add_executable(16_spiral 16_spiral.cpp)
+  target_compile_options(16_spiral PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(16_spiral SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(16_spiral PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )
