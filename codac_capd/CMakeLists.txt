@@ -57,3 +57,23 @@
     capd::capd
     Ibex::ibex
   )
+  
+  add_executable(17_dubins 17_dubins.cpp)
+  target_compile_options(17_dubins PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(17_dubins SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(17_dubins PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )
+
+  add_executable(18_cshape 18_cshape.cpp)
+  target_compile_options(18_cshape PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(18_cshape SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(18_cshape PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )

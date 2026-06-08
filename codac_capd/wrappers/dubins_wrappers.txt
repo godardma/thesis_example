@@ -1,0 +1,8 @@
+### Neural network f(x)
+IMapWrapper f_wrap("var:x1,x2,x3;fun:-1.48*cos(x3),1.48*sin(x3),0.16000000000000003 - 0.20000000000000001*x3;");
+
+### disturbed Neural network f(x)
+IMapWrapper f_disturb_wrap("var:x1,x2,x3;fun:-1.48*cos(x3) + w1,1.48*sin(x3) + w2,0.16000000000000003 - 0.20000000000000001*x3 + w3;");
+
+### Full vector field (f + dq)
+IMapWrapper vectorField_wrap("var:x1,x2,x3,q1,q2,q3;fun:0.059999999999999998*q1 - 1.48*cos(x3),0.059999999999999998*q2 + 1.48*sin(x3),0.059999999999999998*q3 - 0.20000000000000001*x3 + 0.16000000000000003,q1*q3*(1.48*q1*sin(x3) + 1.48*q2*cos(x3) - 0.20000000000000001*q3),q2*q3*(1.48*q1*sin(x3) + 1.48*q2*cos(x3) - 0.20000000000000001*q3),-1.48*q1*sin(x3) - 1.48*q2*cos(x3) + sqr(q3)*(1.48*q1*sin(x3) + 1.48*q2*cos(x3) - 0.20000000000000001*q3) + 0.20000000000000001*q3;");
