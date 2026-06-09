@@ -77,3 +77,13 @@
     capd::capd
     Ibex::ibex
   )
+
+  add_executable(22_area_reach 22_area_reach.cpp)
+  target_compile_options(22_area_reach PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(22_area_reach SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(22_area_reach PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )
