@@ -42,3 +42,8 @@ add_executable(21_rob_arm_unvalidated 21_rob_arm_unvalidated.cpp)
 target_compile_options(21_rob_arm_unvalidated PUBLIC ${CODAC_CXX_FLAGS})
 target_include_directories(21_rob_arm_unvalidated SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
 target_link_libraries(21_rob_arm_unvalidated PUBLIC ${CODAC_LIBRARIES})
+
+add_executable(23_box_chains 23_box_chains.cpp)
+target_compile_options(23_box_chains PUBLIC ${CODAC_CXX_FLAGS})
+target_include_directories(23_box_chains SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
+target_link_libraries(23_box_chains PUBLIC ${CODAC_LIBRARIES})
