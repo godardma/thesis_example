@@ -47,3 +47,8 @@ add_executable(23_box_chains 23_box_chains.cpp)
 target_compile_options(23_box_chains PUBLIC ${CODAC_CXX_FLAGS})
 target_include_directories(23_box_chains SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
 target_link_libraries(23_box_chains PUBLIC ${CODAC_LIBRARIES})
+
+add_executable(24_parallelepiped_chains 24_parallelepiped_chains.cpp)
+target_compile_options(24_parallelepiped_chains PUBLIC ${CODAC_CXX_FLAGS})
+target_include_directories(24_parallelepiped_chains SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
+target_link_libraries(24_parallelepiped_chains PUBLIC ${CODAC_LIBRARIES})
