@@ -66,7 +66,11 @@ vector<ParallelepipedChain> BC_decomposition(const AnalyticFunction<VectorType>&
       L_W.pop_back();
       ParallelepipedLink link (psi,x);
       if (injectivity_criterion(f,chain,link) && chain.is_neighbor(link))
-        chain.push_back(link);
+        {
+          if (!chain.is_neighbor(link))
+            cout << "Warning: link is not neighbor of chain" << endl;
+          chain.push_back(link);
+        }
       else
         break;
     }
@@ -75,40 +79,86 @@ vector<ParallelepipedChain> BC_decomposition(const AnalyticFunction<VectorType>&
   return L_BC;
 }
 
+bool intersect(const Parallelepiped& p1, const Parallelepiped& p2)
+{
+  Parallelepiped p_i (p1.c-p2.c, p1.A-p2.A);
+  return p_i.box().contains(Vector::constant(p1.c.size(),0));
+}
+
 bool find_intersection(const AnalyticFunction<VectorType>& f, vector<ParallelepipedChain>& L_BC)
 {
   bool found_intersection = false;
-  // for (size_t i = 0; i < L_BC.size(); ++i)
-  // {
-  //   auto& chain1 = L_BC[i];
-  //   VectorVar X(chain1[0].x.size());
-  //   AnalyticFunction g1 ({X},f(chain1[0].psi(X)));
-  //   for (size_t j = i+1; j < L_BC.size(); ++j)
-  //   {
-  //     auto& chain2 = L_BC[j];
-  //     AnalyticFunction g2 ({X},f(chain2[0].psi(X)));
-  //     for (auto& link1 : chain1)
-  //     {
-  //       for (auto& link2 : chain2)
-  //       {
-  //         auto z1 = g1.eval(link1.x);
-  //         auto z2 = g2.eval(link2.x);
-  //         if (z1.intersects(z2))
-  //         {
-  //           auto y1 = link1.psi.eval(link1.x);
-  //           auto y2 = link2.psi.eval(link2.x);
-  //           if (!injectivity_criterion(f, y1|y2))
-  //           {
-  //             found_intersection = true;
-  //             link1.is_intersected = true;
-  //             link2.is_intersected = true;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  for (size_t i = 0; i < L_BC.size(); ++i)
+  {
+    if (i % 10 == 0)
+      cout << "Checking chain " << i << " of " << L_BC.size() << endl;
+    auto& chain1 = L_BC[i];
+    VectorVar X(chain1[0].x.size());
+    AnalyticFunction g1 ({X},f(chain1[0].psi(X)));
+    for (size_t j = i+1; j < L_BC.size(); ++j)
+    {
+      auto& chain2 = L_BC[j];
+      AnalyticFunction g2 ({X},f(chain2[0].psi(X)));
+      for (auto& link1 : chain1)
+      {
+        for (auto& link2 : chain2)
+        {
+          auto z1 = g1.parallelepiped_eval(link1.x);
+          auto z2 = g2.parallelepiped_eval(link2.x);
+          if (intersect(z1,z2))
+          {
+            auto y1 = link1.psi.eval(link1.x);
+            auto y2 = link2.psi.eval(link2.x);
+            if (!injectivity_criterion(f, y1|y2))
+            {
+              found_intersection = true;
+              link1.is_intersected = true;
+              link2.is_intersected = true;
+            }
+          }
+        }
+      }
+    }
+  }
   return found_intersection;
+}
+
+
+vector<IntervalVector> subdivide(const IntervalVector& domain,
+                                        int nx, int ny)
+{
+    vector<IntervalVector> boxes;
+
+    for (int i = 0; i < nx; i++)
+    {
+        bool reverse = (i % 2 == 1);
+
+        for (int k = 0; k < ny; k++)
+        {
+            int j = reverse ? ny - 1 - k : k;
+
+            double x0 = domain[0].lb() +
+                        (domain[0].diam() * i) / nx;
+
+            double x1 = domain[0].lb() +
+                        (domain[0].diam() * (i+1)) / nx;
+
+            double y0 = domain[1].lb() +
+                        (domain[1].diam() * j) / ny;
+
+            double y1 = domain[1].lb() +
+                        (domain[1].diam() * (j+1)) / ny;
+
+            boxes.push_back(
+                IntervalVector{
+                    Interval(x0, x1),
+                    Interval(y0, y1)
+                }
+            );
+        }
+    }
+
+    return boxes;
 }
 
 int main()
@@ -118,143 +168,160 @@ int main()
   ColorMap cmap = ColorMap::rainbow(0.5);
 
 
-  Figure3D fig_torus("torus_atlas");
-  fig_torus.draw_axes(0.7);
+  Figure3D fig_torus("init_torus");
+  fig_torus.draw_axes(0.7,{-1.2,-1.2,-1.2});
+
+  Figure3D fig_image("image_torus");
+  fig_image.draw_axes(1.,{-2,0,-1});
+
   // Constructing covers
 
   IntervalVector V1 ({{-1,1},{-1,1}});
   IntervalVector V2 ({{-1,1},{-1,1}});
   IntervalVector V3 ({{-1,1},{-1,1}});
   IntervalVector V4 ({{-1,1},{-1,1}});
+  IntervalVector V5 ({{-1,1},{-1,1}});
+  IntervalVector V6 ({{-1,1},{-1,1}});
 
-  vector<IntervalVector> C1;
-  vector<IntervalVector> C2;
-  vector<IntervalVector> C3;
-  vector<IntervalVector> C4;
+  auto C1 =subdivide(V1, 20, 20);
+  auto C2 =subdivide(V2, 20, 20);
+  auto C3 =subdivide(V3, 20, 20);
+  auto C4 =subdivide(V4, 20, 20);
+  auto C5 =subdivide(V5, 20, 20);
+  auto C6 =subdivide(V6, 20, 20);
 
-  double epsilon = 0.1;
-
-  split(V1, epsilon, C1);
-  split(V2, epsilon, C2);
-  split(V3, epsilon, C3);
-  split(V4, epsilon, C4);
-
-  cout << "Number of boxes in cover: " << C1.size() << endl;
+  cout << "Number of boxes in C1: " << C1.size() << endl;
 
   // Box Chain decomposition
 
-  double r = 1.;
-  double R = 1.8;
+  double r = 0.8;
+  double R = 1.;
 
   VectorVar X(2);
-  // gives a quarter of the torus
-  AnalyticFunction psi_1 ({X},{(R + r*sin(X[0]*PI/2))*cos(X[1]*PI/2),
-                          (R + r*sin(X[0]*PI/2))*sin(X[1]*PI/2),
-                          r*cos(X[0]*PI/2)});
-  AnalyticFunction psi_2 ({X},{(R + r*sin(PI+X[0]*PI/2))*cos(X[1]*PI/2),
-                          (R + r*sin(PI+X[0]*PI/2))*sin(X[1]*PI/2),
-                          r*cos(PI+X[0]*PI/2)});
 
-  AnalyticFunction psi_3 ({X},{(R + r*sin(X[0]*PI/2))*cos(PI+X[1]*PI/2),
-                          (R + r*sin(X[0]*PI/2))*sin(PI+X[1]*PI/2),
-                          r*cos(X[0]*PI/2)});
+  AnalyticFunction psi_0 ({X},{1/sqrt(1+sqr(X[0])+sqr(X[1])),X[0]/sqrt(1+sqr(X[0])+sqr(X[1])),X[1]/sqrt(1+sqr(X[0])+sqr(X[1]))});
 
-  AnalyticFunction psi_4 ({X},{(R + r*sin(PI+X[0]*PI/2))*cos(PI+X[1]*PI/2),
-                          (R + r*sin(PI+X[0]*PI/2))*sin(PI+X[1]*PI/2),
-                          r*cos(PI+X[0]*PI/2)});
+  OctaSym id ({1, 2, 3});
+  OctaSym s1 ({-2, 1, 3});
+  OctaSym s2 ({3, 2, -1});
 
-  ScalarVar t;
-  VectorVar x(2);
-
-  AnalyticFunction traj({t},vec(-9.6* sqr(t)  + 11.4*(0.5* pow(t,3) - t) +30,-9.6*(0.5* pow(t,3) - t) - 11.4* sqr(t) + 30));
-  AnalyticFunction d_traj({t},vec(-19.2* t + 17.1* sqr(t) - 11.4,-14.4* sqr(t) +9.6 -22.8* t));
-
-  AnalyticFunction f_loop({x},vec(-9.6* sqr(x[1])  + 11.4*(0.5* pow(x[1],3) - x[1]) +30 + x[0]*sin(atan2(-14.4* sqr(x[1]) +9.6 -22.8* x[1],-19.2* x[1] + 17.1* sqr(x[1]) - 11.4)),-9.6*(0.5* pow(x[1],3) - x[1]) - 11.4* sqr(x[1]) + 30-x[0]*cos(atan2(-14.4* sqr(x[1]) +9.6 -22.8* x[1],-19.2* x[1] + 17.1* sqr(x[1]) - 11.4))));
-
-  // for (const auto&box : C1)
-  //   fig_torus.draw_parallelepiped(psi_1.parallelepiped_eval(box), Color::red(0.5));
-
-  // for (const auto&box : C2)
-  //   fig_torus.draw_parallelepiped(psi_2.parallelepiped_eval(box), Color::green(0.5));
-
-  // for (const auto&box : C3)
-  //   fig_torus.draw_parallelepiped(psi_3.parallelepiped_eval(box), Color::blue(0.5));
-
-  // for (const auto&box : C4)
-  //   fig_torus.draw_parallelepiped(psi_4.parallelepiped_eval(box), Color::orange(0.5));
-
-  // VectorVar Y(2);
-  // AnalyticFunction f ({Y},{sqr(Y[0])-sqr(Y[1])+Y[0],2*Y[0]*Y[1]+Y[1]});
+  AnalyticFunction psi_1 ({X},id(psi_0(X)));
+  AnalyticFunction psi_2 ({X},s1(psi_0(X)));
+  AnalyticFunction psi_3 ({X},(s1*s1)(psi_0(X)));
+  AnalyticFunction psi_4 ({X},(s1.invert())(psi_0(X)));
+  AnalyticFunction psi_5 ({X},s2(psi_0(X)));
+  AnalyticFunction psi_6 ({X},(s2.invert())(psi_0(X)));
 
   VectorVar Y (3);
-  AnalyticFunction f ({Y},{Y[0],f_loop(Y.subvector(1,2))[0],f_loop(Y.subvector(1,2))[1]});
+  AnalyticFunction f ({Y},{sqr(Y[0])-sqr(Y[1])+Y[0],2*Y[0]*Y[1]+Y[1],Y[2]});
 
   AnalyticFunction g1 ({X},f(psi_1(X)));
   AnalyticFunction g2 ({X},f(psi_2(X)));
   AnalyticFunction g3 ({X},f(psi_3(X)));
   AnalyticFunction g4 ({X},f(psi_4(X)));
-  
-    for (const auto&box : C1)
-    fig_torus.draw_parallelepiped(g1.parallelepiped_eval(box), Color::red(0.5));
+  AnalyticFunction g5 ({X},f(psi_5(X)));
+  AnalyticFunction g6 ({X},f(psi_6(X)));
+
+
+  for (const auto&box : C1)
+  {
+    fig_image.draw_parallelepiped(g1.parallelepiped_eval(box), StyleProperties(Color::red(0.5),"atlas"));
+    fig_torus.draw_parallelepiped(psi_1.parallelepiped_eval(box), StyleProperties(Color::red(0.5),"atlas"));
+  }
 
   for (const auto&box : C2)
-    fig_torus.draw_parallelepiped(g2.parallelepiped_eval(box), Color::green(0.5));
+  {
+    fig_image.draw_parallelepiped(g2.parallelepiped_eval(box), StyleProperties(Color::green(0.5),"atlas"));
+    fig_torus.draw_parallelepiped(psi_2.parallelepiped_eval(box), StyleProperties(Color::green(0.5),"atlas"));
+  }
 
   for (const auto&box : C3)
-    fig_torus.draw_parallelepiped(g3.parallelepiped_eval(box), Color::blue(0.5));
+  {
+    fig_image.draw_parallelepiped(g3.parallelepiped_eval(box), StyleProperties(Color::blue(0.5),"atlas"));
+    fig_torus.draw_parallelepiped(psi_3.parallelepiped_eval(box), StyleProperties(Color::blue(0.5),"atlas"));
+  }
 
   for (const auto&box : C4)
-    fig_torus.draw_parallelepiped(g4.parallelepiped_eval(box), Color::orange(0.5));
+  {
+    fig_image.draw_parallelepiped(g4.parallelepiped_eval(box), StyleProperties(Color::orange(0.5),"atlas"));
+    fig_torus.draw_parallelepiped(psi_4.parallelepiped_eval(box), StyleProperties(Color::orange(0.5),"atlas"));
+  }
 
-  // auto L_BC1 = BC_decomposition(f, psi_1, C1);
-  // auto L_BC2 = BC_decomposition(f, psi_2, C2);
+  for (const auto&box : C5)
+  {
+    fig_image.draw_parallelepiped(g5.parallelepiped_eval(box), StyleProperties(Color::purple(0.5),"atlas"));
+    fig_torus.draw_parallelepiped(psi_5.parallelepiped_eval(box), StyleProperties(Color::purple(0.5),"atlas"));
+  }
 
-  // auto L_BC = L_BC1;
-  // for (const auto& chain : L_BC2)
-  //   L_BC.push_back(chain);
+  for (const auto&box : C6)
+  {
+    fig_image.draw_parallelepiped(g6.parallelepiped_eval(box), StyleProperties(Color::cyan(0.5),"atlas"));
+    fig_torus.draw_parallelepiped(psi_6.parallelepiped_eval(box), StyleProperties(Color::cyan(0.5),"atlas"));
+  }
 
-  // cout << "Number of box chains: " << L_BC.size() << endl;
 
-  // for (size_t i = 0; i < L_BC.size(); ++i)
-  // {
-  //   const auto& chain = L_BC[i];
-  //   for (const auto& link : chain)
-  //   {
-  //     AnalyticFunction gi ({X},f(link.psi(X)));
-  //     double color_value = (double)i/(double)(L_BC.size()-1);
-  //     fig_bc_init.draw_box(link.psi.eval(link.x), {cmap_edge.color(color_value), cmap_fill.color(color_value)});
-  //     fig_bc_image.draw_box(gi.eval(link.x), {cmap_edge.color(color_value), cmap_fill.color(color_value)});
-  //   }
-  // }
+  auto L_BC1 = BC_decomposition(f, psi_1, C1);
+  auto L_BC2 = BC_decomposition(f, psi_2, C2);
+  auto L_BC3 = BC_decomposition(f, psi_3, C3);
+  auto L_BC4 = BC_decomposition(f, psi_4, C4);
+  auto L_BC5 = BC_decomposition(f, psi_5, C5);
+  auto L_BC6 = BC_decomposition(f, psi_6, C6);
 
-  // // Detecting self-intersections
 
-  // bool intersection_found = find_intersection(f, L_BC);
-  // cout << "intersection found ? "<< (intersection_found?"true":"false") << endl;
+  auto L_BC = L_BC1;
+  for (const auto& chain : L_BC2)
+    L_BC.push_back(chain);
+  for (const auto& chain : L_BC3)
+    L_BC.push_back(chain);
+  for (const auto& chain : L_BC4)
+    L_BC.push_back(chain);
+  for (const auto& chain : L_BC5)
+    L_BC.push_back(chain);
+  for (const auto& chain : L_BC6)
+    L_BC.push_back(chain);
 
-  // vector<ParallelepipedLink> unintersected_links;
-  // vector<ParallelepipedLink> intersected_links;
-  // vector<ParallelepipedLink> L_BL;
+  cout << "Number of box chains: " << L_BC.size() << endl;
 
-  // for (const auto& chain : L_BC)
-  // {
-  //   for (const auto& link : chain)
-  //   {
-  //     L_BL.push_back(link);
-  //     AnalyticFunction gi ({X},f(link.psi(X)));
-  //     if (link.is_intersected)
-  //     {
-  //       intersected_links.push_back(link);
-  //       fig_box_chains_new.draw_box(gi.eval(link.x), {Color::red(), Color::red(0.5)});
-  //       fig_intersect.draw_box(gi.eval(link.x), {Color::red(), Color::red(0.5)});
-  //       fig_fake_boundary_removed.draw_box(gi.eval(link.x), {Color::red(), Color::red(0.5)});
+  srand(151);
 
-  //     }
-  //     else
-  //     {
-  //       unintersected_links.push_back(link);
-  //       fig_intersect.draw_box(gi.eval(link.x), {Color::black(), Color::black(0.5)});
-  //     }
-  //   }
-  // }
+  for (size_t i = 0; i < L_BC.size(); ++i)
+  {
+    Color color = Color::random(0.5);
+    const auto& chain = L_BC[i];
+    for (const auto& link : chain)
+    {
+      AnalyticFunction gi ({X},f(link.psi(X)));
+      fig_image.draw_parallelepiped(gi.parallelepiped_eval(link.x), StyleProperties(color,"box_chains"));
+      fig_torus.draw_parallelepiped(link.psi.parallelepiped_eval(link.x), StyleProperties(color,"box_chains"));
+    }
+  }
+
+  // Detecting self-intersections
+  cout << "looking for intersections..." << endl;
+
+  bool intersection_found = find_intersection(f, L_BC);
+  cout << "intersection found ? "<< (intersection_found?"true":"false") << endl;
+
+  vector<ParallelepipedLink> unintersected_links;
+  vector<ParallelepipedLink> intersected_links;
+  vector<ParallelepipedLink> L_BL;
+
+  for (const auto& chain : L_BC)
+  {
+    for (const auto& link : chain)
+    {
+      L_BL.push_back(link);
+      AnalyticFunction gi ({X},f(link.psi(X)));
+      if (link.is_intersected)
+        {
+          fig_image.draw_parallelepiped(gi.parallelepiped_eval(link.x), StyleProperties(Color::red(0.5),"intersected"));
+          fig_torus.draw_parallelepiped(link.psi.parallelepiped_eval(link.x), StyleProperties(Color::red(0.5),"intersected"));
+        }
+      else
+      {
+        fig_image.draw_parallelepiped(gi.parallelepiped_eval(link.x), StyleProperties(Color::gray(0.5),"intersected"));
+        fig_torus.draw_parallelepiped(link.psi.parallelepiped_eval(link.x), StyleProperties(Color::gray(0.5),"intersected"));
+      }
+    }
+  }
 }
