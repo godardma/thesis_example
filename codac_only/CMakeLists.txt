@@ -52,3 +52,8 @@ add_executable(24_parallelepiped_chains 24_parallelepiped_chains.cpp)
 target_compile_options(24_parallelepiped_chains PUBLIC ${CODAC_CXX_FLAGS})
 target_include_directories(24_parallelepiped_chains SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
 target_link_libraries(24_parallelepiped_chains PUBLIC ${CODAC_LIBRARIES})
+
+add_executable(25_validation 25_validation.cpp)
+target_compile_options(25_validation PUBLIC ${CODAC_CXX_FLAGS})
+target_include_directories(25_validation SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} )
+target_link_libraries(25_validation PUBLIC ${CODAC_LIBRARIES})
