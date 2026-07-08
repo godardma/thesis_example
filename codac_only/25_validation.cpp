@@ -6,6 +6,9 @@
 using namespace std;
 using namespace codac2;
 
+vector<Parallelepiped> v_par_ad_all;
+vector<IntervalVector> v_boxes_in;
+
 bool verify_criteria (const Parallelepiped& p)
 {
   // CtcDist c;
@@ -36,6 +39,7 @@ void PEIBOS_recursive (AnalyticFunction<T>& g , IntervalVector X, double epsilon
     // cout << "epsilon limit reached" << endl;
     auto parallel = g.parallelepiped_eval(X);
     output_invalid.push_back(parallel);
+    v_par_ad_all.push_back(parallel);
   }
   else
   {
@@ -45,7 +49,10 @@ void PEIBOS_recursive (AnalyticFunction<T>& g , IntervalVector X, double epsilon
     {
         auto parallel = g.parallelepiped_eval(X0);
         if (verify_criteria(parallel))
+        {
+          v_par_ad_all.push_back(parallel);
           output.push_back(parallel);
+        }
         else
           PEIBOS_recursive(g, X0, epsilon/2., output,output_invalid);
       }
@@ -75,20 +82,38 @@ void PEIBOS_adaptative(AnalyticFunction<T>& f, AnalyticFunction<T>& psi_0,const 
 //   return x_dist.is_empty();
 // }
 
+
+BoolInterval test_inside(const Vector& v)
+{    
+
+  // for (const auto& p_in : v_points_in)
+  // {
+  //   if (sqr(v[0]-p_in[0])+sqr(v[1]-p_in[1]) < 0.01)
+  //     return BoolInterval::TRUE;
+  // }
+
+  for (const auto& p_in : v_boxes_in)
+  {
+    if (p_in.contains(v))
+      return BoolInterval::TRUE;
+  }
+
+  return BoolInterval::FALSE;
+}
+
 int main()
 {
   double r = 1.75;
 
   VectorVar x (2);
   AnalyticFunction c ({x},sqrt(sqr(x[0])+sqr(x[1]))-1);
-  AnalyticFunction f ({x},{sqr(x[0])-sqr(x[1])+x[0],2*x[0]*x[1]+x[1]});
 
-  VectorVar y (2);
+  AnalyticFunction f ({x},{sqr(x[0])-sqr(x[1])+x[0],2*x[0]*x[1]+x[1]});
   AnalyticFunction g ({x},sqrt(sqr(x[0]-0.5)+sqr(x[1]))-r);
 
   AnalyticFunction h ({x},g(f(x)));
 
-  AnalyticFunction ch ({x},{c(x),g(f(x))});
+  AnalyticFunction ch ({x},{c(x),h(x)});
 
   VectorVar X(1);
   AnalyticFunction psi0 ({X},{sin(X[0]*PI/4.),cos(X[0]*PI/4.)});
@@ -110,20 +135,20 @@ int main()
 
   // Inversion
   IntervalVector X0 = IntervalVector::constant(2,{-1.5,1.5});
-  IntervalVector Y0 ({{-1.5,2.5},{-2,2}});
+  IntervalVector Y0 ({{-2,3},{-2.5,2.5}});
 
   start_time = std::chrono::high_resolution_clock::now();
 
-  CtcInverse ctc_inv_out (ch,IntervalVector({{0,0},{0,oo}}));
+  SepInverse sep_inv_out (ch,IntervalVector({{-oo,0},{0,oo}}));
 
-  auto p_out = pave (X0,ctc_inv_out,0.01);
-  auto x_out = p_out.boxes(PavingOut::outer);
+  auto p_out = pave (X0,sep_inv_out,0.01);
+  auto x_out = p_out.boxes(PavingInOut::inner);
   vector<IntervalVector> y_out;
   for (const auto& x : x_out)
     y_out.push_back(f.eval(x));
 
   elapsed = std::chrono::high_resolution_clock::now() - start_time;
-  printf("Computation time for inversion out only: %.4fs\n\n", elapsed.count());
+  printf("Computation time for inversion: %.4fs\n\n", elapsed.count());
 
   // Paving circe
   IntervalVector polar_constraint({{0,r},{0,2*PI}});
@@ -136,11 +161,16 @@ int main()
 
   // Paving AD-PEIBOS output
   CtcUnion ctc_union(2);
-  for (const auto& p : v_par_ad_invalid)
+  for (const auto& p : v_par_ad_all)
     ctc_union|=CtcWrapper<Parallelepiped>(p);
 
-  for (const auto& p : v_par)
-    ctc_union|=CtcWrapper<Parallelepiped>(p);
+  SepInverse sep_unit_circle (c,Interval({-oo,0}));
+  auto p_unit_circle = pave(X0,sep_unit_circle,0.05);
+  auto v_b_inner = p_unit_circle.boxes(PavingInOut::inner);
+  for (const auto& b : v_b_inner)
+    v_boxes_in.push_back(f.eval(b));
+
+  SepCtcBoundary sep_ctc_boundary(ctc_union,test_inside);
 
   Figure2D fig_reference ("reference", GraphicOutput::VIBES | GraphicOutput::IPE);
   fig_reference.set_window_properties({50,50},{500,500});
@@ -162,21 +192,21 @@ int main()
   fig_paving_conform.set_window_properties({600,600},{500,500});
   fig_paving_conform.set_axes(Y0);
 
-  fig_paving_conform.pave(Y0,ctc_union,0.01);
-
-  // Figure2D fig_IEIBOS ("Ad-IEIBOS", GraphicOutput::VIBES | GraphicOutput::IPE);
-  // fig_IEIBOS.set_window_properties({50,1150},{500,500});
-  // fig_IEIBOS.set_axes(Y0);
+  Figure2D fig_inversion_x("inversion_x", GraphicOutput::VIBES | GraphicOutput::IPE);
+  fig_inversion_x.set_window_properties({1150,600},{500,500});
+  fig_inversion_x.set_axes(X0);
 
 
-  fig_reference.draw_circle({0.5,0},r,Color::blue());
-  fig_inversion.draw_circle({0.5,0},r,Color::blue());
-  fig_PEIBOS.draw_circle({0.5,0},r,Color::blue());
-  // fig_IEIBOS.draw_circle({0.5,0},r,Color::blue());
 
+  // fig_paving_conform.pave(Y0,sep_ctc_boundary,0.1);
+  auto p_boundary = pave(Y0,sep_ctc_boundary,0.4);
+  fig_paving_conform.draw_paving(p_boundary);
+
+  for (const auto& p_in : v_boxes_in)
+    fig_paving_conform.draw_box(p_in, Color::red());
 
   for (const auto& y : y_out)
-    fig_inversion.draw_box(y,Color::red());
+    fig_inversion.draw_box(y,StyleProperties::boundary());
 
   for (const auto& p : v_par_ad)
     fig_PEIBOS.draw_parallelepiped(p,Color::green());
@@ -188,5 +218,11 @@ int main()
     fig_reference.draw_parallelepiped(p,Color::black());
 
   fig_paving_circle.draw_paving(p_circ);
+  fig_reference.draw_circle({0.5,0},r,Color::blue());
+  fig_inversion.draw_circle({0.5,0},r,Color::blue());
+  fig_PEIBOS.draw_circle({0.5,0},r,Color::blue());
+  // fig_IEIBOS.draw_circle({0.5,0},r,Color::blue());
+
+  fig_inversion_x.draw_paving(p_out);
 
 }
