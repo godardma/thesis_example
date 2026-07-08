@@ -123,17 +123,25 @@ int main()
   SepInverse sep_inv_out (ch,IntervalVector({{-oo,0},{0,oo}}));
 
   auto p_out = pave (X0,sep_inv_out,0.01);
-  auto x_out = p_out.boxes(PavingInOut::bound);
-  vector<IntervalVector> y_out;
+  auto v_cs = p_out.connected_subsets(PavingInOut::bound);
   CtcUnion ctc_union(2);
-  for (const auto& x : x_out)
+  vector<vector<IntervalVector>> y_out;
+  int i = 0;
+  for (const auto & cs:v_cs)
   {
-    auto y = f.eval(x);
-    y_out.push_back(y);
-    ctc_union|=CtcWrapper<IntervalVector>(f.eval(x));
+    auto x_out = cs.boxes();
+    vector<IntervalVector> y_out_i;
+    for (const auto& x : x_out)
+    {
+      auto y = f.eval(x);
+      y_out_i.push_back(y);
+      ctc_union|=CtcWrapper<IntervalVector>(f.eval(x));
+    }
+    y_out.push_back(y_out_i);
   }
-
-  auto p_union = pave(Y0,ctc_union,0.01);
+  
+  for (const auto& y_out_i : y_out)
+    triangulate(y_out_i,Y0);
 
   std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - start_time;
   printf("Computation time for inversion in and out: %.4fs\n\n", elapsed.count());
@@ -164,16 +172,13 @@ int main()
   fig_inversion.set_window_properties({600,50},{500,500});
   fig_inversion.set_axes(Y0);
 
-  Figure2D fig_inversion_in_out ("inversion_in_out", GraphicOutput::VIBES | GraphicOutput::IPE);
-  fig_inversion_in_out.set_window_properties({1150,50},{500,500});
-  fig_inversion_in_out.set_axes(Y0);
-
   Figure2D fig_PEIBOS ("AD-PEIBOS", GraphicOutput::VIBES | GraphicOutput::IPE);
   fig_PEIBOS.set_window_properties({50,600},{500,500});
   fig_PEIBOS.set_axes(Y0);
 
-  for (const auto& y : y_out)
-    fig_inversion.draw_box(y,StyleProperties::boundary());
+  for (const auto& y_out_i : y_out)
+    for (const auto& y : y_out_i)
+      fig_inversion.draw_box(y,StyleProperties::boundary());
 
   for (const auto& p : v_par_ad)
     fig_PEIBOS.draw_parallelepiped(p,Color::green());
@@ -187,10 +192,8 @@ int main()
   fig_reference.draw_circle({0.5,0},r,Color::blue());
   fig_inversion_x.draw_circle({0,0},1,Color::black());
   fig_inversion.draw_circle({0.5,0},r,Color::blue());
-  fig_inversion_in_out.draw_circle({0.5,0},r,Color::blue());
   fig_PEIBOS.draw_circle({0.5,0},r,Color::blue());
 
   fig_inversion_x.draw_paving(p_out);
-  fig_inversion_in_out.draw_paving(p_union);
 
 }

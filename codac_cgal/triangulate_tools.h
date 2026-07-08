@@ -5,6 +5,9 @@ using namespace std;
 
 #include "cgal_tools.h"
 
+Figure2D fig_inversion_in_out("inversion_in_out", GraphicOutput::VIBES | GraphicOutput::IPE);
+
+
 static ColorMap peibos_cmap()
 {
     ColorMap cmap(Model::HSV);
@@ -82,6 +85,29 @@ void triangulate(const vector<Parallelepiped> &v_par, const IntervalVector &init
         fig_2d.draw_polygon(p, StyleProperties::outside());
 }
 
+void triangulate(const vector<IntervalVector> &v_b, const IntervalVector &init_box)
+{
+
+    fig_inversion_in_out.draw_circle({0.5,0},1.75,Color::blue());
+
+    fig_inversion_in_out.set_axes(axis(0, {init_box[0].lb(), init_box[0].ub()}), axis(1, {init_box[1].lb(), init_box[1].ub()}));
+    fig_inversion_in_out.set_window_properties({1150, 50}, {500, 500});
+
+    IntervalVector bbox(init_box);
+    bbox.inflate(0.2);
+
+    Polygon_with_holes_2 poly_with_holes = generate_polygon_with_hole(v_b);
+
+    Polygon_2 outer_boundary = oriented_polygon(poly_with_holes.outer_boundary());
+    fig_inversion_in_out.draw_polygon(to_codac(outer_boundary), StyleProperties::boundary());
+
+    for (auto it = poly_with_holes.holes_begin(); it != poly_with_holes.holes_end(); ++it)
+    {
+        Polygon_2 hole = oriented_polygon(*it);
+        fig_inversion_in_out.draw_polygon(to_codac(hole), StyleProperties::inside());
+    }
+}
+
 void triangulate_and_eliminate_fake(const vector<Parallelepiped> &v_par, const IntervalVector &init_box, const string &name)
 {
     Figure2D fig_2d(name + "_fake", GraphicOutput::VIBES | GraphicOutput::IPE);
@@ -150,7 +176,7 @@ void triangulate_with_diff(const vector<Parallelepiped> &v_par1, const vector<Pa
     fig_2d.draw_circle({0.5,0},1.75,Color::blue());
 
     fig_2d.set_axes(axis(0, {init_box[0].lb(), init_box[0].ub()}), axis(1, {init_box[1].lb(), init_box[1].ub()}));
-    fig_2d.set_window_properties({50, 600}, {500, 500});
+    fig_2d.set_window_properties({1150, 600}, {500, 500});
 
     IntervalVector bbox(init_box);
     bbox.inflate(0.2);
@@ -159,19 +185,19 @@ void triangulate_with_diff(const vector<Parallelepiped> &v_par1, const vector<Pa
     fig_poly_1.set_window_properties({600, 600}, {500, 500});
 
     fig_poly_2.set_axes(bbox);
-    fig_poly_2.set_window_properties({1150, 600}, {500, 500});
+    fig_poly_2.set_window_properties({50, 600}, {500, 500});
 
 
     Polygon_with_holes_2 poly_with_holes_1 = generate_polygon_with_hole(v_par1);
     Polygon_with_holes_2 poly_with_holes_2 = generate_polygon_with_hole(v_par2);
 
-    fig_poly_1.draw_polygon(to_codac(poly_with_holes_1.outer_boundary()), StyleProperties(Color::red(), "w:0.02"));
+    fig_poly_1.draw_polygon(to_codac(poly_with_holes_1.outer_boundary()), StyleProperties(Color::red()));
 
 
     auto hole_in = *poly_with_holes_2.holes_begin();
     auto polygon_out = poly_with_holes_2.outer_boundary();
     fig_poly_2.draw_polygon(to_codac(hole_in), {Color::black(), Color::black(0.5)});
-    fig_poly_2.draw_polygon(to_codac(polygon_out), StyleProperties(Color::red(), "w:0.02"));
+    fig_poly_2.draw_polygon(to_codac(polygon_out), StyleProperties(Color::red()));
 
     std::list<Polygon_with_holes_2> result_out;
     CGAL::difference(poly_with_holes_1.outer_boundary(), hole_in, std::back_inserter(result_out));

@@ -224,6 +224,21 @@ Polygon_with_holes_2 generate_polygon_with_hole (const vector<Parallelepiped>& v
   return *result.begin();
 }
 
+Polygon_with_holes_2 generate_polygon_with_hole (const vector<IntervalVector>& v_b)
+{
+  Polygon_set_2 polygon_set;
+
+  int i = 0;
+
+  for (auto& b : v_b)
+    polygon_set.join(to_cgal(b));
+  
+
+  std::list<Polygon_with_holes_2> result;
+  polygon_set.polygons_with_holes(std::back_inserter(result));
+  return *result.begin();
+}
+
 double winding_angle (const Vector &p, const vector<Parallelepiped> v_par)
 {
   double angle = 0;
