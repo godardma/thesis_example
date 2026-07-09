@@ -188,12 +188,12 @@ int main()
 
   for (const auto& p : v_par)
     fig_reference.draw_parallelepiped(p,Color::black());
+  fig_inversion_x.draw_paving(p_out);
 
   fig_reference.draw_circle({0.5,0},r,Color::blue());
-  fig_inversion_x.draw_circle({0,0},1,Color::black());
+  fig_inversion_x.draw_circle({0,0},1.0,Color::black());
   fig_inversion.draw_circle({0.5,0},r,Color::blue());
   fig_PEIBOS.draw_circle({0.5,0},r,Color::blue());
 
-  fig_inversion_x.draw_paving(p_out);
 
 }
