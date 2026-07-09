@@ -88,10 +88,10 @@ void triangulate(const vector<Parallelepiped> &v_par, const IntervalVector &init
 void triangulate(const vector<IntervalVector> &v_b, const IntervalVector &init_box)
 {
 
-    fig_inversion_in_out.draw_circle({0.5,0},1.75,Color::blue());
 
     fig_inversion_in_out.set_axes(axis(0, {init_box[0].lb(), init_box[0].ub()}), axis(1, {init_box[1].lb(), init_box[1].ub()}));
     fig_inversion_in_out.set_window_properties({1150, 50}, {500, 500});
+    fig_inversion_in_out.draw_circle({0.5,0},1.75,StyleProperties(Color::blue(),"z:-5"));
 
     IntervalVector bbox(init_box);
     bbox.inflate(0.2);
@@ -174,10 +174,10 @@ void triangulate_with_diff(const vector<Parallelepiped> &v_par1, const vector<Pa
     Figure2D fig_poly_1(name + "_polygon_1", GraphicOutput::VIBES | GraphicOutput::IPE);
     Figure2D fig_poly_2(name + "_polygon_2", GraphicOutput::VIBES | GraphicOutput::IPE);
 
-    fig_2d.draw_circle({0.5,0},1.75,Color::blue());
 
     fig_2d.set_axes(axis(0, {init_box[0].lb(), init_box[0].ub()}), axis(1, {init_box[1].lb(), init_box[1].ub()}));
     fig_2d.set_window_properties({1150, 600}, {500, 500});
+    fig_2d.draw_circle({0.5,0},1.75,StyleProperties(Color::blue(),"z:-5"));
 
     IntervalVector bbox(init_box);
     bbox.inflate(0.2);
