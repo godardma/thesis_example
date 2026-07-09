@@ -100,11 +100,12 @@ void triangulate(const vector<IntervalVector> &v_b, const IntervalVector &init_b
 
     Polygon_2 outer_boundary = oriented_polygon(poly_with_holes.outer_boundary());
     fig_inversion_in_out.draw_polygon(to_codac(outer_boundary), StyleProperties::boundary());
-
+    cout << "Outer area: " << outer_boundary.area() << endl;
     for (auto it = poly_with_holes.holes_begin(); it != poly_with_holes.holes_end(); ++it)
     {
         Polygon_2 hole = oriented_polygon(*it);
         fig_inversion_in_out.draw_polygon(to_codac(hole), StyleProperties::inside());
+        cout << "Hole area: " << hole.area() << endl;
     }
 }
 
@@ -191,13 +192,13 @@ void triangulate_with_diff(const vector<Parallelepiped> &v_par1, const vector<Pa
     Polygon_with_holes_2 poly_with_holes_1 = generate_polygon_with_hole(v_par1);
     Polygon_with_holes_2 poly_with_holes_2 = generate_polygon_with_hole(v_par2);
 
-    fig_poly_1.draw_polygon(to_codac(poly_with_holes_1.outer_boundary()), StyleProperties(Color::red()));
+    fig_poly_1.draw_polygon(to_codac(poly_with_holes_1.outer_boundary()), StyleProperties::boundary());
 
 
     auto hole_in = *poly_with_holes_2.holes_begin();
     auto polygon_out = poly_with_holes_2.outer_boundary();
-    fig_poly_2.draw_polygon(to_codac(hole_in), {Color::black(), Color::black(0.5)});
-    fig_poly_2.draw_polygon(to_codac(polygon_out), StyleProperties(Color::red()));
+    fig_poly_2.draw_polygon(to_codac(hole_in), StyleProperties::inside());
+    fig_poly_2.draw_polygon(to_codac(polygon_out), StyleProperties::boundary());
 
     std::list<Polygon_with_holes_2> result_out;
     CGAL::difference(poly_with_holes_1.outer_boundary(), hole_in, std::back_inserter(result_out));
@@ -205,6 +206,7 @@ void triangulate_with_diff(const vector<Parallelepiped> &v_par1, const vector<Pa
     {
         Polygon_2 outer_boundary = oriented_polygon(poly_with_holes.outer_boundary());
         fig_2d.draw_polygon(to_codac(outer_boundary), StyleProperties::boundary());
+        cout << "Outer area: " << outer_boundary.area() << endl;
     }
 
     for (auto it = poly_with_holes_1.holes_begin(); it != poly_with_holes_1.holes_end(); ++it)
@@ -212,11 +214,12 @@ void triangulate_with_diff(const vector<Parallelepiped> &v_par1, const vector<Pa
         Polygon_2 hole = oriented_polygon(*it);
         std::list<Polygon_with_holes_2> result;
         CGAL::difference(hole, polygon_out, std::back_inserter(result));
-        fig_poly_1.draw_polygon(to_codac(hole), {Color::black(), Color::black(0.5)});
+        fig_poly_1.draw_polygon(to_codac(hole), StyleProperties::inside());
         for (const auto &poly_with_holes : result)
         {
             Polygon_2 outer_boundary = oriented_polygon(poly_with_holes.outer_boundary());
             fig_2d.draw_polygon(to_codac(outer_boundary), StyleProperties::inside());
+            cout << "Hole area: " << outer_boundary.area() << endl;
         }
     }
 }
