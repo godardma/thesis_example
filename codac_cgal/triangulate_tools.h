@@ -5,9 +5,6 @@ using namespace std;
 
 #include "cgal_tools.h"
 
-Figure2D fig_inversion_in_out("inversion_in_out", GraphicOutput::VIBES | GraphicOutput::IPE);
-
-
 static ColorMap peibos_cmap()
 {
     ColorMap cmap(Model::HSV);
@@ -85,17 +82,8 @@ void triangulate(const vector<Parallelepiped> &v_par, const IntervalVector &init
         fig_2d.draw_polygon(p, StyleProperties::outside());
 }
 
-void triangulate(const vector<IntervalVector> &v_b, const IntervalVector &init_box)
+void triangulate(const vector<IntervalVector> &v_b, Figure2D &fig_inversion_in_out)
 {
-
-
-    fig_inversion_in_out.set_axes(axis(0, {init_box[0].lb(), init_box[0].ub()}), axis(1, {init_box[1].lb(), init_box[1].ub()}));
-    fig_inversion_in_out.set_window_properties({1150, 50}, {500, 500});
-    fig_inversion_in_out.draw_circle({0.5,0},1.75,StyleProperties(Color::blue(),"z:-5"));
-
-    IntervalVector bbox(init_box);
-    bbox.inflate(0.2);
-
     Polygon_with_holes_2 poly_with_holes = generate_polygon_with_hole(v_b);
 
     Polygon_2 outer_boundary = oriented_polygon(poly_with_holes.outer_boundary());

@@ -11,14 +11,6 @@ double r;
 
 bool verify_criteria (const Parallelepiped& p)
 {
-  // CtcDist c;
-  // IntervalVector bbox_dist = p.box();
-  // Interval r(1.8,+oo);
-  // IntervalVector x_dist ({{0.5,0.5}, {0,0}, bbox_dist[0], bbox_dist[1] , r});
-  // c.contract(x_dist);
-
-  // return x_dist.is_empty();
-
   VectorVar X(2);
   auto decomp = inverse_enclosure(p.A)*(X-p.c);
 
@@ -36,7 +28,6 @@ void PEIBOS_recursive (AnalyticFunction<T>& g , IntervalVector X, double epsilon
 {
   if (epsilon < 0.0625)
   {
-    // cout << "epsilon limit reached" << endl;
     auto parallel = g.parallelepiped_eval(X);
     output_invalid.push_back(parallel);
     v_par_ad_all.push_back(parallel);
@@ -71,17 +62,6 @@ void PEIBOS_adaptative(AnalyticFunction<T>& f, AnalyticFunction<T>& psi_0,const 
       PEIBOS_recursive(g, X, epsilon,output,output_invalid);
     }
 }
-
-// bool verify_criteria (const IntervalVector& bbox_dist)
-// {
-//   CtcDist c;
-//   Interval r(1.8,+oo);
-//   IntervalVector x_dist ({{0.5,0.5}, {0,0}, bbox_dist[0], bbox_dist[1] , r});
-//   c.contract(x_dist);
-
-//   return x_dist.is_empty();
-// }
-
 
 BoolInterval test_inside(const Vector& v)
 {    
@@ -118,6 +98,12 @@ int main()
   IntervalVector X0 = IntervalVector::constant(2,{-1.5,1.5});
   IntervalVector Y0 ({{-1.5,2.5},{-2.,2.}});
 
+  Figure2D fig_inversion_in_out("inversion_in_out", GraphicOutput::VIBES | GraphicOutput::IPE);
+
+  fig_inversion_in_out.set_axes(Y0);
+  fig_inversion_in_out.set_window_properties({1150, 50}, {500, 500});
+  fig_inversion_in_out.draw_circle({0.5,0},1.75,StyleProperties(Color::blue(),"z:-5"));
+
   auto start_time = std::chrono::high_resolution_clock::now();
 
   SepInverse sep_inv_out (ch,IntervalVector({{-oo,0},{0,oo}}));
@@ -141,7 +127,7 @@ int main()
   }
   
   for (const auto& y_out_i : y_out)
-    triangulate(y_out_i,Y0);
+    triangulate(y_out_i, fig_inversion_in_out);
 
   std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - start_time;
   printf("Computation time for inversion in and out: %.4fs\n\n", elapsed.count());
