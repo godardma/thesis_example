@@ -1,64 +1,73 @@
-function example_manual_reachInner()
-% example_manual_reachInner - example from the manual demonstrating the 
-% reachInner operation as defined in the manual
+% example_nonlinear_reachInner_01_brusselator - example for the computation
+%    of an inner approximation of the reachable set for nonlinear dynamics,
+%    using the Minkowski difference approach from [1]
 %
 % Syntax:
-%   example_manual_reachInner()
+%    res = example_nonlinear_reachInner_01_brusselator
 %
 % Inputs:
 %    -
 %
 % Outputs:
-%    -
+%    res - true/false 
 %
-% Other m-files required: none
-% Subfunctions: none
-% MAT-files required: none
-%
-% See also:
+% References:
+%    [1] M. Wetzlinger, A. Kulmburg, and M. Althoff. "Inner approximations
+%        of reachable sets for nonlinear systems using the Minkowski
+%        difference". IEEE Control Systems Letters, 2024.
 
-% Authors:       Tobias Ladner
-% Written:       27-September-2023
+% Authors:       Mark Wetzlinger
+% Written:       17-December-2023
 % Last update:   ---
 % Last revision: ---
 
 % ------------------------------ BEGIN CODE -------------------------------
 
-% system dynamics
-f = @(x,u) [1-2*x(1) + 3/2*x(1)^2*x(2); ...
-    x(1)-3/2*x(1)^2*x(2)];
-sys = nonlinearSys(f);
+% System Dynamics ---------------------------------------------------------
 
-% parameter
-params.tFinal = 1;
-params.R0 = interval([0.75;0],[1;0.25]);
+brusselator = @(x,u) [1-2*x(1) + 3/2 * x(1)^2*x(2); ...
+                      x(1)-3/2*x(1)^2*x(2)];
+sys = nonlinearSys('brusselator',brusselator);
 
-% reachability settings
-options.algInner = 'scale';
-options.timeStep = 0.001;
-options.taylorTerms = 10;
-options.zonotopeOrder = 50;
-options.intermediateOrder = 20;
-options.errorOrder = 10;
 
-% reachability analysis
+% Parameters --------------------------------------------------------------
+
+params.tFinal = 1.0;
+R0 = interval([0.9;0],[1;0.1]);
+
+
+% Reachability Settings ---------------------------------------------------
+
+options_outer.alg = 'lin-adaptive';
+
+options_inner_Minkdiff.algInner = 'minkdiff';
+options_inner_Minkdiff.timeStep = 0.01;
+options_inner_Minkdiff.compOutputSet = false;
+options_inner_Minkdiff.tensorOrder = 2;
+
+
+% Reachability Analysis ---------------------------------------------------
+
 start = tic();
-[Rin,Rout] = reachInner(sys,params,options);
+
+params.R0 = zonotope(R0);
+Rout = reach(sys,params,options_outer);
+
+params.R0 = polytope(R0);
+Rin = reachInner(sys,params,options_inner_Minkdiff);
+
 ellapsed = toc(start)
 
-Rin_final = Rin.timePoint.set{end};
+% Visualization -----------------------------------------------------------
 
-% plot --------------------------------------------------------------------
-%%
-figure; hold on;
-useCORAcolors("CORA:manual")
-plot(Rout.timePoint.set{end})
-plot(Rin.timePoint.set{end})
+figure; hold on; box on;
+xlabel('x_1'); ylabel('x_2');
 
-enlargeAxis(1.2);
-% title('$\mathcal{S}$ and center','Interpreter','latex');
-xlabel('$x_{(1)}$','Interpreter','latex')
-ylabel('$x_{(2)}$','Interpreter','latex')
-xlim([0.6 0.8]); ylim([0.46 0.64])
+useCORAcolors("CORA:manual");
+plot(Rout.timePoint.set{end},[1,2],'DisplayName','Outer approximation');
+plot(Rin.timePoint.set{end},[1,2],'DisplayName','Inner approximation');
+
+% xlim([0.65 0.75]); ylim([0.485 0.585]);
+xlim([0.87 0.94]); ylim([0.74 0.81]);
 
 % ------------------------------ END OF CODE ------------------------------

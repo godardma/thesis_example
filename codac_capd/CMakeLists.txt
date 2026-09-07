@@ -87,3 +87,13 @@
     capd::capd
     Ibex::ibex
   )
+
+  add_executable(b27_cora_higher_dimension b27_cora_higher_dimension.cpp)
+  target_compile_options(b27_cora_higher_dimension PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(b27_cora_higher_dimension SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(b27_cora_higher_dimension PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )

@@ -1,89 +1,63 @@
-% 
-% function res = example_nonlinear_reachInner_02_biologicalModel
-% example_nonlinear_reachInner_02_biologicalModel - example for the
-%    computation of an inner approximation of the reachable set for
-%    nonlinear dynamics, using the approaches in [1] and [2]
-%
-% Syntax:
-%    res = example_nonlinear_reachInner_02_biologicalModel
-%
-% Inputs:
-%    -
-%
-% Outputs:
-%    res - true/false 
-%
-% References:
-%    [1] M. Wetzlinger, A. Kulmburg, and M. Althoff. "Inner approximations
-%        of reachable sets for nonlinear systems using the Minkowski
-%        difference". IEEE Control Systems Letters, 2024.
-
-% Authors:       Mark Wetzlinger
-% Written:       17-December-2023
-% Last update:   ---
-% Last revision: ---
-
 % ------------------------------ BEGIN CODE -------------------------------
 
 % System Dynamics ---------------------------------------------------------
 
-sys = nonlinearSys('biologicalModel',@biologicalModel);
-
-%% 
+boat = @(x,u) [cos(x(3)); sin(x(3)); 0];
+sys = nonlinearSys('boat',boat);
 
 
 % Parameters --------------------------------------------------------------
 
-params.tFinal = 0.2;
-R0 = interval(0.99*ones(7,1),1.01*ones(7,1));
+params.tFinal = 20.0;
+R0 = interval([-1;-1;-1+pi/4],[1;1;1+pi/4]);
 
-%% 
 
 % Reachability Settings ---------------------------------------------------
 
-options_outer.alg = 'lin-adaptive';
+% options_outer.alg = 'lin-adaptive';
 
-%% 
+% options_inner_Minkdiff.algInner = 'minkdiff';
+% options_inner_Minkdiff.timeStep = 0.01;
+% options_inner_Minkdiff.compOutputSet = false;
+% options_inner_Minkdiff.tensorOrder = 2;
 
-% 1. Minkdiff algorithm
-options_inner_Minkdiff.algInner = 'minkdiff';
-options_inner_Minkdiff.timeStep = 0.01;
-options_inner_Minkdiff.tensorOrder = 2;
-options_inner_Minkdiff.compOutputSet = false;
+options1.algInner = 'scale';
+options1.splits = 2;
+options1.iter = 2;
+options1.orderInner = 5;
+options1.scaleFac = 0.95;
+options1.timeStep = 0.01;                           
+options1.taylorTerms = 10;                            
+options1.zonotopeOrder = 50;       
+options1.intermediateOrder = 20;
+options1.errorOrder = 10;
+
+
 
 % Reachability Analysis ---------------------------------------------------
 
-%% 
-params.R0 = polytope(R0);
 start = tic();
-[Rin_Minkdiff,Rout_Minkdiff] = reachInner(sys,params,options_inner_Minkdiff);
+
+params.R0 = zonotope(R0);
+Rout = reach(sys,params,options_outer);
+
+params.R0 = polytope(R0);
+Rin = reachInner(sys,params,options1);
+P = Rin.timePoint.set{end};
+isempty(P)
+% Rout.timePoint.set{end}
 ellapsed = toc(start)
-%% 
 
 % Visualization -----------------------------------------------------------
 
-figure;
-projDims = {[1,2],[3,4],[5,6],[1,7],[2,3],[4,5],[6,7],[1,3],[2,4]};
+% figure; hold on; box on;
+% xlabel('x_1'); ylabel('x_2');
+% 
+% useCORAcolors("CORA:manual");
+% plot(Rout.timePoint.set{end},[1,2],'DisplayName','Outer approximation');
+% plot(Rin.timePoint.set{end},[1,2],'DisplayName','Inner approximation');
 
-for p=1:length(projDims)
-
-    % labels
-    subplot(3,3,p); hold on; box on;
-    xlabel("x_" + projDims{p}(1)); ylabel("x_" + projDims{p}(2));
-    useCORAcolors('CORA:contDynamics',3);
-    
-    % outer approximation 
-    
-    % inner approximation
-    plot(Rin_Minkdiff,projDims{p},'DisplayName','Inner approximation (Minkowski difference)');
-    plot(Rin_Minkdiff.R0,projDims{p},'DisplayName','Initial set');
-    plot(Rin_Minkdiff.timePoint.set{end},projDims{p},'DisplayName','Final set');
-    plot(Rout_Minkdiff.timePoint.set{end},projDims{p},'DisplayName','Final set');
-    % initial set
-
-end
-
-% completed
-res = true;
+% xlim([0.65 0.75]); ylim([0.485 0.585]);
+% xlim([-10 30]); ylim([-10 30]);
 
 % ------------------------------ END OF CODE ------------------------------
