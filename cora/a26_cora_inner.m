@@ -32,7 +32,8 @@ sys = nonlinearSys('brusselator',brusselator);
 
 % Parameters --------------------------------------------------------------
 
-params.tFinal = 1.0;
+% params.tFinal = 1.0;
+params.tFinal = 3.0;
 R0 = interval([0.9;0],[1;0.1]);
 
 
@@ -67,7 +68,10 @@ useCORAcolors("CORA:manual");
 plot(Rout.timePoint.set{end},[1,2],'DisplayName','Outer approximation');
 plot(Rin.timePoint.set{end},[1,2],'DisplayName','Inner approximation');
 
+% for tFinal=1.
 % xlim([0.65 0.75]); ylim([0.485 0.585]);
+
+% for tFinal=3.
 xlim([0.87 0.94]); ylim([0.74 0.81]);
 
 % ------------------------------ END OF CODE ------------------------------

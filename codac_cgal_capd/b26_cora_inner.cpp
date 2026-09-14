@@ -15,6 +15,7 @@ int main()
   capd::IMap vectorField("var:x1,x2;fun:1-2*x1+1.5*sqr(x1)*x2,x1-1.5*sqr(x1)*x2;");
 
   double tf = 1.;
+  // double tf = 3.;
   double dt = tf;
   
   AnalyticFunction psi0 ({X},{0.05*X[0],0.05});
@@ -38,7 +39,9 @@ int main()
   printf("Computation time: %.4fs\n\n", elapsed.count());
 
   Figure2D output ("cora_inner",GraphicOutput::VIBES | GraphicOutput::IPE);
+  // for tf = 1.
   output.set_axes(axis(0,{0.65,0.75}),axis(1,{0.485,0.585}));
+  // for tf = 3.
   // output.set_axes(axis(0,{0.87,0.94}),axis(1,{0.74,0.81}));
   output.set_window_properties({100,100},{800,800});
 
