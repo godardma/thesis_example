@@ -97,3 +97,13 @@
     capd::capd
     Ibex::ibex
   )
+
+  add_executable(29_cshape_chains 29_cshape_chains.cpp)
+  target_compile_options(29_cshape_chains PUBLIC ${CODAC_CXX_FLAGS})
+  target_include_directories(29_cshape_chains SYSTEM PUBLIC ${CODAC_INCLUDE_DIRS} ${CODAC_CAPD_INCLUDE_DIR})
+  target_link_libraries(29_cshape_chains PRIVATE
+    ${CODAC_LIBRARIES}
+    ${CODAC_CAPD_LIBRARY}
+    capd::capd
+    Ibex::ibex
+  )

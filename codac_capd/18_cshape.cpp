@@ -113,10 +113,10 @@ int main()
         for (auto& [t, v_par] : m_v_par_reach)
             for (const auto& p : v_par)
             {
-                output_discrete.draw_parallelepiped(p, StyleProperties({Color::red(), Color::red(0.5)},"reachable_at_"+to_string(t),"z:1"));
+                output_discrete.draw_zonotope(p.proj({0,1}), StyleProperties({Color::red(), Color::red(0.5)},"reachable_at_"+to_string(t),"z:1"));
                 if (t == tf_discrete)
                     {
-                        output_final.draw_parallelepiped(p, StyleProperties({Color::red(), Color::red(0.5)},"reachable_final","z:1"));
+                        output_final.draw_zonotope(p.proj({0,1}), StyleProperties({Color::red(), Color::red(0.5)},"reachable_final","z:1"));
                     }
             }
     }

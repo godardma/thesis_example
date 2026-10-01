@@ -71,8 +71,8 @@ bool verify_criteria (Parallelepiped& p)
     auto JJf=to_codac(monodromyMatrix);
 
     // To get the flow function and its Jacobian (monodromy matrix) for x_hat
-    auto xc = X.mid();
-    auto yc = (symmetry(psi_0.eval(xc)) + offset).mid();
+    Vector xc = X.mid();
+    IntervalVector yc = (symmetry(psi_0.eval(xc)) + offset);
 
     capd::IMatrix monodromyMatrix_punc(n,n);
     capd::ITimeMap::SolutionCurve solution_punct(initialTime);
