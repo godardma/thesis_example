@@ -1,8 +1,7 @@
 #include <codac>
 #include <codac-capd.h>
-
 #include "wrappers_utils.h"
-
+#include <unistd.h>
 using namespace std;
 using namespace codac2;
 
@@ -31,6 +30,10 @@ int main()
     fig_traj_xy.set_window_properties({50, 50}, {500, 500});
     fig_traj_xy.set_axes(IntervalVector({traj_x_bounds,traj_y_bounds}));
 
+    // Figure2D fig_traj_xy_anim("traj_xy_anim", GraphicOutput::IPE);
+    // fig_traj_xy_anim.set_window_properties({50, 50}, {500, 500});
+    // fig_traj_xy_anim.set_axes(IntervalVector({traj_x_bounds,traj_y_bounds}));
+
     Figure2D fig_traj_yz("traj_yz", GraphicOutput::VIBES | GraphicOutput::IPE);
     fig_traj_yz.set_window_properties({600, 50}, {500, 500});
     fig_traj_yz.set_axes(IntervalVector({traj_y_bounds,traj_z_bounds}));
@@ -52,19 +55,25 @@ int main()
     fig_zx.set_axes(IntervalVector({z_bounds,x_bounds}));
 
 
+    int index = 0;
     for (const auto &p : state_traj)
+    {
         if (p.first <= tf_discrete)
         {
             cout << "t: " << p.first  << endl;
             output.draw_sphere(p.second.subvector(0,2), Matrix::Identity(3,3)*0.025,Color::dark_green());
+            // uncomment for animation
+            // fig_traj_xy_anim.draw_circle({p.second[0], p.second[1]}, 0.02, StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
+            // fig_traj_xy_anim.save("../frames/animation_point"+std::to_string(index)+".png");
             fig_traj_xy.draw_circle({p.second[0], p.second[1]}, 0.02, StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
             fig_traj_yz.draw_circle({p.second[1], p.second[2]}, 0.01, StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
             fig_traj_zx.draw_circle({p.second[2], p.second[0]}, 0.005, StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
         }
-    fig_xy.draw_point({state_traj(tf_discrete)[0], state_traj(tf_discrete)[1]},StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
-    fig_yz.draw_point({state_traj(tf_discrete)[1], state_traj(tf_discrete)[2]},StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
-    fig_zx.draw_point({state_traj(tf_discrete)[2], state_traj(tf_discrete)[0]},StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
-
+        fig_xy.draw_point({state_traj(tf_discrete)[0], state_traj(tf_discrete)[1]},StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
+        fig_yz.draw_point({state_traj(tf_discrete)[1], state_traj(tf_discrete)[2]},StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
+        fig_zx.draw_point({state_traj(tf_discrete)[2], state_traj(tf_discrete)[0]},StyleProperties({Color::dark_green(),Color::dark_green(0.5)},"z:2"));
+        index++;
+    }
     set_nb_threads(max_threads());
     auto wrappers = readIMapWrappers("../wrappers/dubins_wrappers.txt");
 
@@ -86,9 +95,11 @@ int main()
     capd::IMap vectorField_wrap(std::get<0>(wrappers));
 
     auto peibos_output_base = PEIBOS(vectorField_wrap, tf_discrete, dt_discrete, psi0, {id,s1,s1*s1,s1.invert(),s2,s2.invert()}, 0.1, {x1_init, x2_init,theta_init}, true);
+    // auto peibos_output_base = PEIBOS(vectorField_wrap, tf_discrete, dt_discrete, psi0, {id,s1,s1*s1,s1.invert(),s2,s2.invert()}, 0.25, {x1_init, x2_init,theta_init}, true);
 
     auto m_v_par_base = reach_set(peibos_output_base);
 
+    index = 0;
     for (auto& [t, v_par] : m_v_par_base)
     {
         for (const auto& par: v_par)
@@ -104,12 +115,18 @@ int main()
                             fig_zx.draw_zonotope(par.proj({2,0}), StyleProperties({Color::pink(), Color::pink(0.5)},"base","z:1"));
                     }
                 fig_traj_xy.draw_zonotope(par.proj({0,1}), StyleProperties(Color::pink(0.5),"base_traj_xy"));
+                // uncomment for animation
+                // fig_traj_xy_anim.draw_zonotope(par.proj({0,1}), StyleProperties(Color::pink(0.5),"base_traj_xy"));
                 fig_traj_yz.draw_zonotope(par.proj({1,2}), StyleProperties(Color::pink(0.5),"base_traj_yz"));
                 fig_traj_zx.draw_zonotope(par.proj({2,0}), StyleProperties(Color::pink(0.5),"base_traj_zx"));
             }
+        // fig_traj_xy_anim.save("../frames/animation_set"+std::to_string(index)+".png");    
+        index++;
     }
-        
 
+    // sleep(1);
+    // exit(1);
+    
     // Reachability
 
     OctaSym id_reach ({1,2,3,4,5,6});

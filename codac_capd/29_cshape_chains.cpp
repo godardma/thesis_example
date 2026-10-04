@@ -273,6 +273,10 @@ int main()
     output_pave_in_out.set_axes(Y0);
     output_pave_in_out.set_window_properties({50, 200}, {1600, 800});
 
+    Figure2D output_pave_in_out_cleaned("cshape_chains_inout_cleaned", GraphicOutput::IPE);
+    output_pave_in_out_cleaned.set_axes(Y0);
+    output_pave_in_out_cleaned.set_window_properties({50, 200}, {1600, 800});
+
     Figure2D output_cleaned("cshape_cleaned", GraphicOutput::VIBES | GraphicOutput::IPE);
     output_cleaned.set_axes(Y0);
     output_cleaned.set_window_properties({50, 200}, {1600, 800});
@@ -471,7 +475,43 @@ int main()
             kept_links.push_back(link);
     }
 
-    for (const auto link : kept_links)
-        output_cleaned.draw_zonotope(link.z, StyleProperties::boundary());
+    CtcUnion ctc_union2(2);
 
+    for (const auto link : kept_links)
+    {
+        output_cleaned.draw_zonotope(link.z, StyleProperties::boundary());
+        ctc_union2 |= CtcWrapper(link.z.box());
+    }
+
+
+    SepCtcPair sep_boundary2(CtcIdentity(dim), ctc_union2);
+
+    PavingInOut p2 = pave(Y0,sep_boundary2,0.2);
+
+    // output_pave_in_out_cleaned.draw_paving(p2);
+
+    auto v_cs2 = p2.connected_subsets(PavingInOut::outer_complem);
+    std::list<std::shared_ptr<PavingInOut::ConnectedSubset_>> cs_to_color2;
+    cs_to_color.clear();
+    for (const auto& cs: v_cs2)
+    {
+        bool to_color = false;
+        for (const auto box : cs.boxes())
+        {
+            if (to_color)
+                break;
+            for (const auto green_box : p.boxes(PavingInOut::inner))
+            {
+                if (green_box.intersects(box))
+                {
+                    to_color = true;
+                    cs_to_color.push_back(std::make_shared<PavingInOut::ConnectedSubset_>(cs));
+                    break;
+                }
+            }
+        }
+    }
+    
+    p2.tree()->visit(visitor);
+    output_pave_in_out_cleaned.draw_paving(p2);
 }
