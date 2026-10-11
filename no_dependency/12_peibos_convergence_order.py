@@ -18,8 +18,8 @@ ax.add_patch(Rectangle((np.log(epsilon[-1]), np.log(vol_box_natural[-1])), 0.5, 
 ax.plot(np.log(epsilon), np.log(vol_parallelepiped), marker='o', label='Parallelepiped Enclosure')
 ax.add_patch(Rectangle((np.log(epsilon[-1]), np.log(vol_parallelepiped[-1])), 0.5, 1, fill=False, edgecolor='orange', label='Parallelepiped convergence order'))
 
-# ax.plot(np.log(epsilon), np.log(vol_box_centered), marker='o', label='Centered box Enclosure')
-# ax.add_patch(Rectangle((np.log(epsilon[-1]), np.log(vol_box_centered[-1])), 0.5, 0.5, fill=False, edgecolor='green', label='Centered box convergence order'))
+ax.plot(np.log(epsilon), np.log(vol_box_centered), marker='o', label='Centered box Enclosure')
+ax.add_patch(Rectangle((np.log(epsilon[-1]), np.log(vol_box_centered[-1])), 0.5, 0.5, fill=False, edgecolor='green', label='Centered box convergence order'))
 
-# ax.legend()
+ax.legend()
 plt.show()
